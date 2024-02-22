@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Add Customer</title>
 </head>
 <body>
 
-    <form id="form" action="add_cust.php" method="post">
+  <div class="container">
+    <header>
+        <div>
+            <img class="profile-picture" src="path/to/profile-picture.jpg" alt="Profile Picture">
+            <span>Username</span>
+            <span class="software-name">Optician Portal</span>
+        </div>
+        <!-- Add more elements or styles for the header as needed -->
+    </header>
+
+    <div style="display: flex;">
+      <nav>
+          <!-- Your navigation links go here -->
+          <ul>
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+              <!-- Add more navigation links as needed -->
+          </ul>
+      </nav>
+
+      <form id="form" action="add_cust.php" method="post">
         
   
         <p>
@@ -84,6 +107,10 @@
       </div>
   
       </form>
+
+    </div>
+</div>
+
     
 </body>
 </html>
