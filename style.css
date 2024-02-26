@@ -1,0 +1,67 @@
+body{
+    background-color: rgb(188, 164, 164);
+}
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 10px    ;
+}
+
+header {
+    text-align: center;
+}
+
+.logo-p{
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.container {
+    background-color: rgb(255, 255, 255);
+    border: 5px solid black;
+    border-radius: 10px;
+
+
+}
+.grid-container{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px ;
+    max-width: 80%;
+
+}
+
+.grid-container button{
+
+    border-radius: 10px;
+    background-color: #e4d8dc;
+    padding: 40px 10px 40px 10px;
+
+
+
+}
+
+nav {
+    background-color: #e4d8dc;
+}
