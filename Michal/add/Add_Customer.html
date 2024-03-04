@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d6920b45df.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Add Customer</title>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div>
+            <img class="profile-picture" src="../assets/logo.webp" alt="Profile Picture">
+            <span>Hi, [Username]</span>
+        </div>
+        <span class="software-name">Optician Portal</span>
+        <!-- Add more elements or styles for the header as needed -->
+    </header>
+
+    <div style="display: flex;">
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-house"></i>Home</a></li><br>
+                <li><a href="#">Counter Lens Sales</a></li><br>
+                <li><a href="#">Spectacle Sales Menu</a></li><br>
+                <li><a href="#">Eye test Menu</a></li><br>
+                <li><a href="#">Stock Control</a></li><br>
+                <li><a href="#">File Maintenance</a></li><br>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+
+        <form id="form" action="add_cust.php" onsubmit="return submitForm()" method="post">
+
+            <h2>Add Customer Form</h2>
+
+            <p>
+                <div class="input-group">
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Name"
+                        required
+                    />
+                </div>
+            </p>
+
+            <p>
+                <div class="input-group">
+                    <input
+                        type="text"
+                        name="Address"
+                        id="Address"
+                        placeholder="Address"
+                        required
+                    />
+                </div>
+            </p>
+
+            <p>
+                <div class="input-group">
+                    <input type="text" name="eircode" id="eircode" placeholder="Eircode">
+                </div>
+            </p>
+
+            <p>
+                <div class="input-group">
+                    <label for="dob">Date of Birth</label>
+                    <input
+                        type="date"
+                        name="dob"
+                        id="dob"
+                        placeholder="Date of Birth"
+                        required
+                        onchange="validateForm()"
+                    />
+                </div>
+            </p>
+
+            <div class="input-group">
+                <input
+                    type="text"
+                    name="PhoneNum"
+                    id="PhoneNum"
+                    placeholder="Phone Number"
+                    pattern="[0-9 - ()\s]{10}"
+                    title="Only numbers and spaces allowed"
+                />
+            </div>
+
+            <div class="error" id="error-message"></div>
+
+            <br>
+
+            <div class="button-container">
+                <button id="submit" type="submit" value="Submit">Submit</button>
+                <button id="reset" type="reset" value="Clear">Clear</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(188, 164, 164);
+
 }
 .profile-picture {
     width: 50px;
@@ -9,7 +9,7 @@ body{
 
 header {
     display: flex;
-    background-color: lightgray;
+    background-color: #93B5C6;
     
 }
 .software-name {
@@ -22,7 +22,7 @@ header {
     margin: 100px 100px;
     width: 70%;
     max-width:1200px ;
-    background-color: green;
+    background-color: ;
     border: 5px solid black;
     border-radius: 10px;
     
@@ -38,7 +38,7 @@ form {
 
 nav {
     padding-right: 20px;
-    background-color: rgb(175, 24, 24);
+    background-color: #E4D8DC;
     display: flex;
     align-items: center;
 
@@ -51,7 +51,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: wheat;
+    color: black;
     
 }
 

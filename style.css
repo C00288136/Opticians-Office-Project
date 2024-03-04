@@ -38,6 +38,7 @@ header {
     background-color: rgb(255, 255, 255);
     border: 5px solid black;
     border-radius: 10px;
+    padding-bottom: 30px;
 
 
 }
@@ -54,9 +55,10 @@ header {
 
 .grid-container button{
 
+    
     border-radius: 10px;
-    background-color: #e4d8dc;
-    padding: 40px 10px 40px 10px;
+    background-color: #ECE5E5;
+    padding: 50px 10px 50px 10px;
 
 
 
