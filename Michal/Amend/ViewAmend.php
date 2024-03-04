@@ -1,10 +1,10 @@
 <?php 
-include 'db.inc.php';
+include 'db.con.php';
 
 date_default_timezone_set('UTC');
 $dbDate = date("Y-m-d", strtotime($_POST['amendDOB'])); //to match date format in database
 
-$sql = "UPDATE student SET  StudentName = '$_POST[amendname]', StudentAddress = '$_POST[amendaddress]', StudentPhone = '$_POST[amendphone]' , GradePointAverage = '$_POST[amendgrade]', DOB = '$dbDate', YearBeganCourse = '$_POST[amendyearstart]', CourseCode = '$_POST[amendcourse]' WHERE StudentId = '$_POST[amendid]' ";
+$sql = "UPDATE patient SET  Name = '$_POST[amendname]', Address = '$_POST[amendaddress]', Eircode = '$_POST[amendeircode]', DOB = '$dbDate', Phone = '$_POST[amendPhone]' WHERE PatientID = '$_POST[amendid]' ";
 
 if (!mysqli_query($con,$sql)){
     echo 'Error' . mysqli_error($con);
@@ -23,6 +23,6 @@ else
 
 mysqli_close($con);
 ?>
-<form action="Amendview.html.php" method="post"/>
-<input type="submit" value="Return to Previous Screen"> 
-</form>
+<script>alert('A record has been changed for <?php  echo $_POST["amendname"];?>.');
+window.location.href = "View.html.php"
+</script>
