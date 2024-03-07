@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d6920b45df.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="add.css">
+    <script src="add.js"></script>
     <title>Add Customer</title>
 </head>
 <body>
@@ -87,8 +87,9 @@
                     name="PhoneNum"
                     id="PhoneNum"
                     placeholder="Phone Number"
-                    pattern="[0-9 - ()\s]{10}"
+                    pattern="[0-9 -]*"
                     title="Only numbers and spaces allowed"
+                    required
                 />
             </div>
 

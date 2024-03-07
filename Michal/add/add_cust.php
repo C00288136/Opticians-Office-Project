@@ -2,7 +2,19 @@
     include 'db.con.php';
     date_default_timezone_set("UTC");
 
-    $sql = "INSERT into Patient (Name,Address,Eircode,DOB,Phone) VALUES   ('$_POST[name]','$_POST[Address]','$_POST[eircode]','$_POST[dob]','$_POST[PhoneNum]')";
+    $countQuery = "SELECT MAX(PatientID) as max from Patient ";
+    $result = mysqli_query($con,$countQuery);
+
+    if ($result){
+        $row = mysqli_fetch_assoc($result);
+        $nextPrimaryKey = $row['max'] + 1;
+
+    }
+    else{
+        die("Error getting the next available primary key");
+    }
+
+    $sql = "INSERT into Patient (PatientID, Name,Address,Eircode,DOB,Phone) VALUES   ('$nextPrimaryKey','$_POST[name]','$_POST[Address]','$_POST[eircode]','$_POST[dob]','$_POST[PhoneNum]')";
 //uses info form insert.html and runs a sql query to add the data into the table
     if (!mysqli_query($con,$sql))
     {
