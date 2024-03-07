@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amend View Customer</title>
-    <link rel="stylesheet" type="text/css" href="layout.css">
+    <link rel="stylesheet" type="text/css" href="amend.css">
     <link rel="stylesheet" href="style.css">
     </style>
 </head>

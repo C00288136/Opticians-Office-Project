@@ -1,0 +1,23 @@
+.container{
+
+    flex-direction:column;
+    max-width: 800px;
+    border: 5px solid red;
+    background-color: rgb(226, 226, 184);
+    margin: auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+input{
+    margin: 10px 10px 10px 10px;
+}
+
+form #button{
+
+max-width: 50%;
+}
