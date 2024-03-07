@@ -21,3 +21,8 @@ form #button{
 
 max-width: 50%;
 }
+
+#error-message{
+    color: red;
+    font-size: 15px;
+}

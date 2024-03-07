@@ -1,5 +1,5 @@
 <?php
-    include 'db.con.php';
+    include '../db.con.php';
     date_default_timezone_set("UTC");
 
     $countQuery = "SELECT MAX(PatientID) as max from Patient ";
