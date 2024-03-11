@@ -5,11 +5,7 @@ function validateForm()
     var TestDate = new Date(document.getElementById('TestDate').value);
     var todayDate = new Date();
 
-    if (isNaN(RightEye))
-    {
-        alert("Right eye is not a float!");
-        return false;
-    }
+    if (!isNaN(RightEye) && isFinite(RightEye) && RightEye % 1 !== 0)
     if (isNaN(LeftEye))
     {
         alert("Right eye is not a float!");

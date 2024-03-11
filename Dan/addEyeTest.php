@@ -9,8 +9,7 @@ if (!mysqli_query($con,$sql))
     {
         die("An error in the SQL Query: " .mysqli_error($con));
     }
-else
-    {
-        echo "details added successfully";
-    }
+echo "Entry has been added";
+
+mysqli_close($con);
 ?>
