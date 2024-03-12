@@ -5,16 +5,17 @@ function validateForm()
     var TestDate = new Date(document.getElementById('TestDate').value);
     var todayDate = new Date();
 
-    if (!isNaN(RightEye) && isFinite(RightEye) && RightEye % 1 !== 0)
-    if (isNaN(LeftEye))
+    if (isNaN(RightEye) || !isFinite(RightEye) || typeof RightEye !== 'number' || !Number.isInteger(RightEye))
     {
-        alert("Right eye is not a float!");
-        return false;
+        alert("Right eye is not a float!")
     }
-    if (TestDate > todayDate)
+    else if (isNaN(LeftEye) || !isFinite(LeftEye) || typeof LeftEye !== 'number' || !Number.isInteger(LeftEye))
     {
-        alert("Invalid Date. Please check again");
-        return false;
+        alert("Left eye is not a float!")
+    }
+    else if (todayDate > TestDate)
+    {
+        alert("Date is in the future!");
     }
 
 }
