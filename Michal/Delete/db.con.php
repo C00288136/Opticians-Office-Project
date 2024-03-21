@@ -5,7 +5,7 @@
 $hostname = "localhost";
 $username = "clearvision";
 $password = "Ey3;Care!";
-$dbname = "Optician_project";
+$dbname = "optician_project";
 
 
 $con = mysqli_connect($hostname,$username,$password,$dbname);
