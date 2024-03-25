@@ -5,42 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Person</title>
     <link rel="stylesheet" type="text/css" href="delete.css">
-    <script>
-        function populate(){
-
-console.log("populate called")
-var sel = document.getElementById("listbox");
-var result;
-result = sel.options[sel.selectedIndex].value;
-
-// i edited the separator for the data fields because my addresses had the , field
-var personalDetails = result.split('|');
-document.getElementById("display").innerHTML = "The details of the selected person are :" + result;
-document.getElementById("deleteid").value = personalDetails[0];
-document.getElementById("deleteName").value = personalDetails[1];
-document.getElementById("deleteAddress").value = personalDetails[2];
-document.getElementById("deleteEircode").value = personalDetails[3];
-// this code is needed to split the date by the - and then reversing and joining it together to change the format to y-m-d
-document.getElementById("delDOB").value = personalDetails[4].split("-").reverse().join("-")
-document.getElementById("deletePhone").value = personalDetails[5];
-document.getElementById("delBalance").value =personalDetails[6];
-}
-    </script>
+    <script src="delete.js"></script>
+    
 </head>
 <body>
 
 <div class="container">
 <h1>Delete Person</h1>
 
-<?php include 'listbox.php';?>
+<?php include 'listbox.php';
+// not exactly sure why but i need to create session in here as well as the the delete php
+// otherwise i get a error for the session destroy down below
+session_start();?>
+
+
 
     <p id="display"></p>
 
     
-    <form action="Delete.php" method="post">
+    <form action="Delete.php" onsubmit="return confirmCheck()" method="post">
         
-    <label for="deleteid">Person Id</label>
-    <input type="text" name="delid" id="delid">
+    <label for="delid">Person Id</label>
+    <input type="text" name="delid" id="delid" disabled>
     
     <label for="deleteName">Name</label>
     <input type="text" name="deleteName" id="deleteName" disabled>
@@ -65,9 +51,15 @@ document.getElementById("delBalance").value =personalDetails[6];
 
     <input type="submit" id="button" value="Delete User">
 
-</form>
 
+<?php
+        if  (isset($_SESSION["patientid"])) {echo "<h1 class='myMessage'>Record deleted for ". $_SESSION["firstname"]. "</h1>";}
+        session_destroy();
+?>
+
+</form>
 </div>
+
 
 </body>
 </html>
