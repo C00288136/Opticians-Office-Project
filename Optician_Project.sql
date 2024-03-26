@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2024 at 07:31 PM
+-- Generation Time: Mar 26, 2024 at 07:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `optician_project`
 --
+CREATE DATABASE IF NOT EXISTS `optician_project` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `optician_project`;
 
 -- --------------------------------------------------------
 
