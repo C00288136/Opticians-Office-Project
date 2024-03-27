@@ -1,5 +1,11 @@
 body{
     background-color: rgb(188, 164, 164);
+
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 10px;
+    padding-bottom: 30px;
+
 }
 .profile-picture {
     width: 50px;
@@ -11,6 +17,8 @@ body{
 
 header {
     text-align: center;
+    background-color: #93B5C6;
+    padding-top: 15px;
 }
 
 .logo-p{
@@ -22,7 +30,7 @@ header {
 
 
 .logo{
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     color: #333;
 }
@@ -33,12 +41,13 @@ header {
     border-radius: 50%;
 }
 
+.logo-p{
+    font-size: 20px;
+}
+
 
 .container {
-    background-color: rgb(255, 255, 255);
-    border: 5px solid black;
-    border-radius: 10px;
-    padding-bottom: 30px;
+
 
 
 }
@@ -60,10 +69,16 @@ header {
     background-color: #ECE5E5;
     padding: 50px 10px 50px 10px;
 
+}
 
-
+.grid-item{
+    font-size: 25px;
 }
 
 nav {
     background-color: #e4d8dc;
+}
+
+.contact-lens, .glasses{
+width: 50px;
 }
