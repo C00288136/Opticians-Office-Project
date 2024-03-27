@@ -38,6 +38,3 @@ function populate(){
                 }
             }
 
-function validateDelete(){
-    
-}
