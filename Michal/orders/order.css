@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-form{
+#mainform{
     display: flex;
     flex-direction: column;
     
