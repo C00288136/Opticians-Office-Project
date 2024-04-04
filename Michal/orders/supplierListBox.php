@@ -20,18 +20,5 @@ echo "</select>";
 
 
 mysqli_close($con);
-
-$supID = $_POST['supplierID'];
-$sql = "SELECT Description from Inventory INNER JOIN supplier on inventory.SupplierID = supplier.SupplierID WHERE supplier.SupplierID = $supID ";
-
-if (!$sql = mysqli_query($con,$sql)){
-    die("Error in querying database" . mysqli_error($con));
-}
-
-while($row = mysqli_fetch_array($sql)){
-    $id = $row['Description'];
-}
-
-
-
 ?>
+
