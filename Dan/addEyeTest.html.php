@@ -17,6 +17,10 @@
 
             <label for="TestID">TestID:</label>
             <input type="number" id="TestID" name="TestID" required>
+
+            <label for="PatientID">PatientID:</label>
+            <input type="number" id="PatientID" name="PatientID" required>
+
             <label for="RightEye">Right eye:</label>
             <input type="number" id="RightEye" name="RightEye" step="any" required>
             
