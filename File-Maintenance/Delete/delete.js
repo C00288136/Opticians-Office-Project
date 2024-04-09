@@ -1,3 +1,8 @@
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: JS used for populating the fields and double checking with the user they want to delete this entry 
+Date: 01/03/24
+*/
 function populate(){
 
     console.log("populate called")
@@ -25,12 +30,10 @@ function populate(){
         
                 var response;
                 response = confirm('Are you sure you want to save these changes?');
-                if (response){
-                    elements = ["delid","deleteName","deleteAddress","deleteEircode","delDOB","deletePhone","delBalance"]
-                    for (var i = 0; i < elements.length; i++) {
-                        document.getElementById(elements[i]).disabled = false;
-                    }
-                    return true;
+                // passes the delid to the post php 
+                if (response){       
+                        document.getElementById("delid").disabled = false;
+                         return true;
                 }
                 else{
                     populate();

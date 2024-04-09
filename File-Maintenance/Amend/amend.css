@@ -1,12 +1,19 @@
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: CSS used for the amend page
+Date: 10/03/24
+*/
 body{
     background-color: rgb(255, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
 }
 .profile-picture {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
-    margin-top: 10px    ;
+    margin-top: 10px ;
 }
 
 header {
@@ -53,8 +60,9 @@ nav {
     font-size: 25px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-
-    width: 230px;
+    height: 100vh;
+    width: 10%;
+    border-right: 2px solid black;
 
 
 }
@@ -79,24 +87,26 @@ a:hover{
 }
 
 .container {
-display: flex;
+    display: flex;
+    background-color: whitesmoke;
 }
 .content{
-    flex: 1;
-    padding:20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+    margin: auto;
+    background-color: #ece5e5;
+    /* used 5% padding all around to add spacing for the form */
+     padding: 5% 5% 5% 5%;
+     border: black solid 4px;
+     border-radius: 10px;
     
 }
 
 form {
     margin: auto;
-    width: 50%;
     display: grid;
+    /* defines the grid layout to be 2 columns with equal width */
     grid-template-columns: repeat(2,1fr);
     grid-column-gap:20px ;
+    text-align: right;
 }
 
 #listbox{
@@ -104,22 +114,24 @@ padding: 10px;
 margin-bottom: 10px;
 }
 
-#amendViewButton{
 
-}
 
 input{
+    background-color: white;
     grid-column: 2;
     font-size: 30px;
     display: flex;
     margin-bottom: 15px;
     padding: 10px 20px;
+    /* allows the element to grow to the size of available */
     flex: 1;
     min-width: 250px;
     font-size: 20px;
+    border: 2px solid black;
 }
 
 label{
+    text-align: right;
     font-size: 30px;
     margin-right: 60px ;
     min-width: 250px;
@@ -150,4 +162,5 @@ label{
     color: red;
     font-size: 25px;
     font-weight: bold;
+    max-width: 60% ;
 }

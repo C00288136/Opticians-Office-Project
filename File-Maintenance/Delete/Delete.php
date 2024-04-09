@@ -1,4 +1,10 @@
-<?php session_start();
+<?php
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: PHP listbox used for changing the delete flag on customers
+Date: 10/03/24
+*/
+session_start();
 
 include '../../db.con.php';
 // query to count the amount of entires present containing the posted patientID
@@ -11,7 +17,7 @@ if($result){
     $row = mysqli_fetch_assoc(($result));
     // Assigns the value of the 'count' column from the fetched row to the variable $entries
     $entires = $row['count'];
-//    if not entries present the code is exected to update the delete flag
+//    if not entries present the code is expected to update the delete flag
     if ($entires == 0){
         
         $sql = "UPDATE Patient SET  deleted_flag = true where PatientID = '$_POST[delid]'";

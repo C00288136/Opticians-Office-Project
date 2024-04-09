@@ -1,3 +1,9 @@
+<!-- 
+    Name: Michal Kuras
+    Student Number : C00288136
+    Purpose: HTML form for the the user to add a customer to the Patients Table
+    Date: 01/03/24
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +16,7 @@
 </head>
 <body>
 
+    <!-- Header used for the logo and Portal name -->
     <header>
         <div class="logo">
             <img  src="../../assets/logo.webp" alt="">
@@ -20,10 +27,7 @@
     
     <div class="wrapper">
         <nav>
-            <div class="logo-p">
-                <img class="profile-picture" src="../../assets/user.png" alt="Profile Picture">
-                <span>Hi, [Username]</span>
-            </div>
+            
             <ul>
                 <a href="../../index.html">
                     <li>Home</li>
@@ -75,9 +79,10 @@
             </p>
 
             <p>
+                <!-- form validation dont to make sure the correct format is used for the eircode -->
                 <div class="input-group">
                     <label for="EirCode">Eir Code:</label>
-                    <input type="text" name="eircode" id="eircode" placeholder="Eircode">
+                    <input type="text" name="eircode" id="eircode" placeholder="Eircode" onchange="validateForm()">
                 </div>
             </p>
 
@@ -96,6 +101,7 @@
             </p>
 
             <div class="input-group">
+                <!-- pattern used for phone number -->
                 <label for="PhoneNum">Phone Number:</label>
                 <input
                     type="text"
@@ -107,7 +113,7 @@
                     required
                 />
             </div>
-
+<!-- div made for error messages where js fills any present error messages -->
             <div class="error" id="error-message"></div>
 
             <br>

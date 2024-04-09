@@ -1,4 +1,10 @@
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: JS scripts used for populating the input fields as well as locking them from being changed and validating that the data entered is correct
+Date: 10/03/24
+*/
 function populate(){
+    // these 3 lines select the listbox and read the data from it
     var sel = document.getElementById("listbox");
     var result;
     result = sel.options[sel.selectedIndex].value;
@@ -17,7 +23,6 @@ function populate(){
     }
 
     function toggleLock(){
-
         if (document.getElementById("amendViewbutton").value == "Amend Details")
         {
             document.getElementById("amendname").disabled = false;
@@ -36,7 +41,6 @@ function populate(){
             document.getElementById("amendViewbutton").value = "Amend Details";
         }
     }
-
     function confirmCheck() {
     const birthdate = new Date(document.getElementById('amendDOB').value);
     var name = document.getElementById("amendname").value
@@ -83,8 +87,6 @@ function validateForm(){
         errorMessage.innerHTML += "The eircode format in incorrect (e.g. A32 2345)<br>"
       }
       
-  
-  
         var button = document.getElementById("amendViewbutton") 
         var savebutton = document.getElementById("button")
       //the first statement is used to make sure there is no error 
