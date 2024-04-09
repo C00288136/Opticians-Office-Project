@@ -96,9 +96,24 @@ display: flex;
     text-align: center;
 }
 
+.grid-container button:hover{
+    transition: 0.3s;
+        background-color: #baa8a8;
+    
+}
 
 
 .material-symbols-outlined, .contact-lens, .glasses {
 width: 50px;
 font-size: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    transition: 0.3s;
+    color: white;
 }
