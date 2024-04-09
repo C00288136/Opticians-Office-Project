@@ -1,5 +1,5 @@
 <?php
-include '../db.con.php' ;
+include '../../db.con.php' ;
 date_default_timezone_set('UTC');
 
 $sql = "SELECT StockNumber , Description, Quantity, ReorderQty, SupplierStockCode ,SupplierID FROM Inventory where deleted_flag = 0";

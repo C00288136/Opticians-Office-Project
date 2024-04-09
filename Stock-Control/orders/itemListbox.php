@@ -1,5 +1,5 @@
 <?php
-include '../db.con.php';
+include '../../db.con.php';
 
 $supID = $_POST['supplierID'];
 
