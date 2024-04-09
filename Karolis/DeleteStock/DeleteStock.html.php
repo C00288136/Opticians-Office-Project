@@ -3,7 +3,7 @@
     C00287940
     Delete Stock Form
  -->
-<fi?php 
+<?php 
     session_start();
     ?>
 <!DOCTYPE html>

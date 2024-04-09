@@ -22,7 +22,7 @@
         <a href="../AmendStock/AmendView.html.php">Amend/View Stock</a><br>
     </div>
     <div>
-    <h2>Amend/View a Person</h2>
+    <h2>Amend/View Stock</h2>
     </div>
     <fieldset>
     <?php
@@ -31,16 +31,40 @@
     <p id="display"></p>
     <form name="myForm" action="AmendView.php" onsubmit="return confirmCheck()" method="post">
     <div class="fields">
-        <label for="amendid">Person ID</label>
+        <label for="amendid">Stock ID</label>
         <input type="text" name="amendid" id="amendid" disabled>
-        <label for="amendfirstname">First Name</label>
-        <input type="text" name="amendfirstname" id="amendfirstname" disabled>
-        <label for="amendlastname">Surname</label>
-        <input type="text" name="amendlastname" id="amendlastname" disabled>
-        <label for="amendDOB">Date of Birth</label>
-        <input type="text" name="amendDOB" id="amendDOB" disabled>
-        <label for="amendemail">Email</label>
-        <input type="text" name="amendemail" id="amendemail" disabled>
+        <label for="amenddescription">Description</label>
+        <input type="text" name="amenddescription" id="amenddescription" disabled>
+        <label for="amendcost">Cost Price</label>
+        <input type="text" name="amendcost" id="amendcost" disabled>
+        <label for="amendretail">Retail Price</label>
+        <input type="text" name="amendretail" id="amendretail" disabled>
+        <label for="amendreorder">Reorder Quantity</label>
+        <input type="text" name="amendreorder" id="amendreorder" disabled>
+        <label for="amendname">Supplier Name</label>
+        <select name="amendname" id="amendname" disabled >
+                    <?php 
+                        //Database connection
+                        include "../../db.inc.php";
+                
+                        $con = mysqli_connect($host, $username, $password, $dbname);
+                
+                        if(!$con){
+                            echo "Failed to connect to MySQL" . mysqli_connect_error();
+                        }
+
+                        // Query to get suppliers
+                        $result = $con->query("SELECT SupplierID, Name FROM Supplier");
+
+                        // Output suppliers in dropdown menu
+                        while($row = $result->fetch_assoc()){
+                            echo "<option value='" . $row['SupplierID'] . "'>" . $row['Name'] . "</option>";
+                        }
+
+                        // Close DB connection
+                        $con->close();
+                    ?>
+                </select>
     </div>
         <br><br>
         <input type="button" value="Amend Details" id="amendViewButton" onclick="toggleLock()">

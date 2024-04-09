@@ -5,30 +5,32 @@
 <?php
     include "../../db.inc.php";
 
-    date_default_timezone_set('UTC');
+    // Query database for iventory stock and and supplier name
+    $result = $con->query("SELECT StockNumber, Description, CostPrice, RetailPrice, ReorderQty, SupplierID
+    FROM inventory WHERE deleted_flag = false");
 
-    $sql = "SELECT * FROM inventory where deleted_flag = 0";
-
-    if (!$result = mysqli_query($con, $sql)) {
-        die('Error in querying the database: ' . mysqli_error($con));
+    if(!$result){//error check
+        echo "Failed to retrieve data from MySQL: " . $con->error;
+    } else {
+        echo "<select class='listbox' name='listbox' id='listbox' style='width: 200px;'>";
+        echo "<option value='' disabled selected>Select an option</option>";//initial placeholder
+        // Display items in select dropdown
+        while($row = $result->fetch_assoc()){
+            // make variables for all data and convert to $all for options
+            $id = $row['StockNumber'];
+            $description = $row['Description'];
+            $cost = $row['CostPrice'];
+            $retail = $row['RetailPrice'];
+            $reorder = $row['ReorderQty'];
+            $name = $row['SupplierID'];
+            
+            $all = "$id,$description,$cost,$retail,$reorder,$name";
+            echo "<option value='" . $all . "'>" . $description . "</option>";
+        } 
+        echo "</select>";
     }
-
-    echo "<br><select name='listbox' id='listbox'>";
-    echo "<option value='' disabled selected>Select an option</option>";
-
-    while ($row = mysqli_fetch_array($result)) {
-        $id = $row['StockNumber'];
-        $description = $row['Description'];
-        $cost = $row['CostPrice'];
-        $retail = $row['RetailPrice'];
-        $reorder = $row['ReorderQty'];
-        $allText = "$id,$description,$cost,$retail,$reorder";
-
-        echo "<option value='$allText'>$description</option>";
-    }
-    echo "</select>";
-
-    mysqli_close($con);
+    // Close DB connection
+    $con->close();
 ?>
 
 <script>
