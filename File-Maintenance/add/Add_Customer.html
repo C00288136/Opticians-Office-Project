@@ -10,28 +10,39 @@
 </head>
 <body>
 
-<div class="container">
     <header>
-        <div>
-            <img class="profile-picture" src="../assets/logo.webp" alt="Profile Picture">
-            <span>Hi, [Username]</span>
+        <div class="logo">
+            <img  src="../../assets/logo.webp" alt="">
+            <p class="logo">Optician Portal</p>
         </div>
-        <span class="software-name">Optician Portal</span>
-        <!-- Add more elements or styles for the header as needed -->
     </header>
-
-    <div style="display: flex;">
+    
+    
+    <div class="wrapper">
         <nav>
+            <div class="logo-p">
+                <img class="profile-picture" src="../../assets/user.png" alt="Profile Picture">
+                <span>Hi, [Username]</span>
+            </div>
             <ul>
-                <li><a href="#"><i class="fas fa-house"></i>Home</a></li><br>
-                <li><a href="#">Counter Lens Sales</a></li><br>
-                <li><a href="#">Spectacle Sales Menu</a></li><br>
-                <li><a href="#">Eye test Menu</a></li><br>
-                <li><a href="#">Stock Control</a></li><br>
-                <li><a href="#">File Maintenance</a></li><br>
-                <!-- Add more navigation links as needed -->
-            </ul>
-        </nav>
+                <a href="../../index.html">
+                    <li>Home</li>
+                </a>
+                    <a href="">
+                        <li>Counter Sales</li>
+                    </a>
+                    <a href="">
+                        <li>Spectacle Sales</li>
+                    </a>
+                    <a href="">
+
+                        <li>Eye Test Menu</li>
+                    </a>
+                    <a href="">
+                        <li>Stock Control</li>
+                    </a>
+        </ul>
+    </nav>
 
         <form id="form" action="add_cust.php" onsubmit="return submitForm()" method="post">
 
@@ -39,6 +50,7 @@
 
             <p>
                 <div class="input-group">
+                    <label for="name">Name:</label>
                     <input
                         type="text"
                         name="name"
@@ -51,6 +63,7 @@
 
             <p>
                 <div class="input-group">
+                    <label for="Address">Address:</label>
                     <input
                         type="text"
                         name="Address"
@@ -63,13 +76,14 @@
 
             <p>
                 <div class="input-group">
+                    <label for="EirCode">Eir Code:</label>
                     <input type="text" name="eircode" id="eircode" placeholder="Eircode">
                 </div>
             </p>
 
             <p>
                 <div class="input-group">
-                    <label for="dob">Date of Birth</label>
+                    <label for="dob">Date of Birth:</label>
                     <input
                         type="date"
                         name="dob"
@@ -82,6 +96,7 @@
             </p>
 
             <div class="input-group">
+                <label for="PhoneNum">Phone Number:</label>
                 <input
                     type="text"
                     name="PhoneNum"
@@ -104,7 +119,7 @@
 
         </form>
 
-    </div>
+
 </div>
 
 </body>
