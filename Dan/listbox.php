@@ -2,7 +2,7 @@
 include 'db.con.php';
 date_default_timezone_set('UTC');
 
-$sql = "SELECT name FROM patient where Deleted_Flag = 0";
+$sql = "SELECT Name FROM patient where Deleted_Flag = 0";
 
 if (!$result = mysqli_query($con, $sql))
 {

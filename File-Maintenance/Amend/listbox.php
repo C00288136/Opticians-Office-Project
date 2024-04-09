@@ -1,5 +1,5 @@
 <?php
-include '../db.con.php' ;
+include '../../db.con.php' ;
 date_default_timezone_set('UTC');
 
 $sql = "SELECT PatientID , Name, Address, Eircode, DOB ,Phone, Balance FROM Patient where deleted_flag = 0";

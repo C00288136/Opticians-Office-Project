@@ -1,5 +1,5 @@
 <?php 
-include '../db.con.php';
+include '../../db.con.php';
 
 date_default_timezone_set('UTC');
 $dbDate = date("Y-m-d", strtotime($_POST['amendDOB'])); //to match date format in the database
