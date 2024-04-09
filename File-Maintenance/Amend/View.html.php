@@ -11,13 +11,49 @@
 </head>
 <body>
 
+<header>
+        <div class="logo">
+            <img  src="../../assets/logo.webp" alt="">
+            <p class="logo">Optician Portal</p>
+        </div>
+    </header>
+
 <div class="container">
+
+<nav>
+            <div class="logo-p">
+                <img class="profile-picture" src="../../assets/user.png" alt="Profile Picture">
+                <span>Hi, [Username]</span>
+            </div>
+            <ul>
+                <a href="../../index.html">
+                    <li>Home</li>
+                </a>
+                    <a href="">
+                        <li>Counter Sales</li>
+                    </a>
+                    <a href="">
+                        <li>Spectacle Sales</li>
+                    </a>
+                    <a href="">
+
+                        <li>Eye Test Menu</li>
+                    </a>
+                    <a href="">
+                        <li>Stock Control</li>
+                    </a>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+    
 <h1>Amend/View a Person</h1>
 <h4>Please select a person and then click the amend button if you wish to update</h4>
 
 <?php include 'listbox.php';?>
 
-    <p id="display"></p>
+    <p id="display" hidden></p>
     <input type="button" value="Amend Details" id="amendViewbutton" onclick="toggleLock()">
     
     <form  action= "ViewAmend.php" onsubmit="return confirmCheck()" method="post">
@@ -50,7 +86,7 @@
 
     <input type="submit" id="button" value="Save Changes">
 </form>
-
+</div>
 </div>
 
 </body>
