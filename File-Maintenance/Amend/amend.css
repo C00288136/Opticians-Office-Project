@@ -53,7 +53,7 @@ nav {
     font-size: 25px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: 90vh;
+
     width: 230px;
 
 
@@ -67,38 +67,87 @@ nav ul{
 nav li{
     margin: 10px 0 40px 0px;
 }
-.wrapper{
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    transition: 0.3s;
+    color: white;
+}
+
+.container {
 display: flex;
 }
-.grid-container{
+.content{
+    flex: 1;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+}
+
+form {
+    margin: auto;
+    width: 50%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 40px;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap:20px ;
+}
 
-    max-width: 80%;
-    padding-left:50px;
-    padding-top:30px;
+#listbox{
+padding: 10px;
+margin-bottom: 10px;
+}
 
+#amendViewButton{
 
 }
 
-.grid-container button{
-    height: 80%;
-    border-radius: 10px;
-    background-color: #ECE5E5;
-
-
+input{
+    grid-column: 2;
+    font-size: 30px;
+    display: flex;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    flex: 1;
+    min-width: 250px;
+    font-size: 20px;
 }
 
-.grid-item{
+label{
+    font-size: 30px;
+    margin-right: 60px ;
+    min-width: 250px;
+    grid-column: 1;
+}
+
+.button {
+
+    padding: 20px 20px 20px 20px;
+    font-size: 20px;
+    background-color: darkgray;
+    color: black;
+    cursor: pointer;
+    border: solid black 2px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    
+}
+
+.button:hover{
+
+    transition: 0.5s;
+    background-color: #93B5C6;
+}
+
+#error-message{
+    color: red;
     font-size: 25px;
-    padding: 30px ;
-    text-align: center;
-}
-
-
-
-.material-symbols-outlined, .contact-lens, .glasses {
-width: 50px;
-font-size: 50px;
+    font-weight: bold;
 }

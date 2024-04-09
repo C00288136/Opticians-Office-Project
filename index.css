@@ -91,3 +91,9 @@ nav {
 width: 50px;
 font-size: 50px;
 }
+
+.grid-container button:hover{
+    transition: 0.3s;
+    background-color: #baa8a8;
+
+}

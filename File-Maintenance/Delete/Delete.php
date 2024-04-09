@@ -1,6 +1,6 @@
 <?php session_start();
 
-include '../db.con.php';
+include '../../db.con.php';
 // query to count the amount of entires present containing the posted patientID
 $test_sql = "SELECT COUNT(*) AS count FROM test WHERE PatientID = '$_POST[delid]'";
 

@@ -10,8 +10,44 @@
 </head>
 <body>
 
-<div class="container">
-<h1>Delete Person</h1>
+<header>
+        <div class="logo">
+            <img  src="../../assets/logo.webp" alt="">
+            <p class="logo">Optician Portal</p>
+        </div>
+    </header>
+
+    <div class="container">
+
+<nav>
+
+
+            <div class="logo-p">
+                <img class="profile-picture" src="../../assets/user.png" alt="Profile Picture">
+                <span>Hi, [Username]</span>
+            </div>
+            <ul>
+                <a href="../../index.html">
+                    <li>Home</li>
+                </a>
+                    <a href="">
+                        <li>Counter Sales</li>
+                    </a>
+                    <a href="">
+                        <li>Spectacle Sales</li>
+                    </a>
+                    <a href="">
+
+                        <li>Eye Test Menu</li>
+                    </a>
+                    <a href="">
+                        <li>Stock Control</li>
+                    </a>
+        </ul>
+    </nav>
+
+    <div class="content">
+    <h1>Delete Person</h1>
 
 <?php include 'listbox.php';
 // not exactly sure why but i need to create session in here as well as the the delete php
@@ -20,7 +56,7 @@ session_start();?>
 
 
 
-    <p id="display"></p>
+    <p id="display" hidden ></p>
 
     
     <form action="Delete.php" onsubmit="return confirmCheck()" method="post">
@@ -58,6 +94,7 @@ session_start();?>
 ?>
 
 </form>
+</div>
 </div>
 
 
