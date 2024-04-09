@@ -1,5 +1,13 @@
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: Styling for the add page
+Date: 01/03/24
+*/
 body{
     background-color: rgb(255, 255, 255);
+    /* font family and weight we decided to use for the whole project */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
 }
 .profile-picture {
     width: 50px;
@@ -10,19 +18,17 @@ body{
 }
 
 header {
+    /* flex on the text and image to be able to centre both to the middle of the header*/
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: center;
     background-color: #93B5C6;
     padding-top: 15px;
-    height: 120px;
+    height: 15%;/*used to make sure 15% of the screen is taken by the header no  matter of screen size*/
 }
 
 .logo-p{
     padding-left: 10px;
-    display: flex;
-    align-items: center;
 }
 
 .logo{
@@ -34,6 +40,7 @@ header {
 }
 
 .logo img{
+    /* dimensions used for making logo a not too big on the page */
     width: 70px;
     height: 70px;
     margin-bottom: 10px;
@@ -42,21 +49,16 @@ header {
 
 }
 
-.logo-p{
-    font-size: 20px;
-    background-color: #e4d8dc;
-    width: max-content;
-}
-
 nav {
     background-color: #e4d8dc;
     font-size: 25px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: 90vh;
-    width: 230px;
-
-
+    /* used the specific border radius to only curve the 2 bottom edges */
+    height: 100vh;
+    /* used to set the height  to 100% of the viewport */
+    width: 10%;
+    border-right: 2px solid black;
 }
 
 nav ul{
@@ -65,46 +67,60 @@ nav ul{
     list-style-type: none;
 }
 nav li{
-    margin: 10px 0 40px 0px;
+    /* margins for the list items only need top and bottom hence the 0 for left and right */
+    margin: 10% 0 40% 0 
 }
 
 a {
+    /* no decoration for a more appealing look */
     text-decoration: none;
     color: black;
 }
 
 a:hover{
+    /* transition to a different color so the user knows when he is hover over the link */
     transition: 0.3s;
     color: white;
 }
 
 .wrapper {
+    /* wrapper contains nav and form flex display to have the side by side */
 display: flex;
+background-color: whitesmoke;
+
+}
+
+.wrapper form{
+    /* centres the form */
+    margin: auto;
 }
 
 form {
-    margin: auto;
-
-
+    /* flex so the labels and inputs can be aligned  */
+    display: flex;
+    justify-content: center;
+    /* direction change so they align vertically */
+    flex-direction: column;
+    text-align: right;
+    background-color: #ece5e5;
+    padding: 5% 5% 5% 5%;
+    border: black solid 4px;
+    border-radius: 10px;
 }
 
 h2{
     font-size: 40px;
-    margin-top: -15%;
-
+    text-align: center;
 }
 
 .input-group {
-    font-size: 30px;
-    display: flex;
+    font-size: 30px;    
     margin-bottom: 15px;
 }
 
 .input-group label{
     margin-right: 60px ;
     min-width: 250px;
-
-
 }
 
 .input-group input{
@@ -112,13 +128,13 @@ h2{
     flex: 1;
     min-width: 250px;
     font-size: 20px;
+    border: black 3px solid;
 }
 
 button {
-
-    padding: 20px 20px 20px 20px;
+    padding: 10px 30px 10px 30px;
     font-size: 20px;
-    background-color: darkgray;
+    background-color: white;
     color: black;
     cursor: pointer;
     border: solid black 2px;
@@ -128,13 +144,14 @@ button {
 }
 
 button:hover{
-
     transition: 0.5s;
     background-color: #93B5C6;
 }
 
 #error-message{
+    /* made the error message red and bold so the user can clearly see what the issue is */
     color: red;
     font-size: 25px;
     font-weight: bold;
+    max-width: 80% ;
 }

@@ -1,9 +1,15 @@
+<!-- 
+Student Number : C00288136
+Purpose: Sub menu created for the file maintenance section of the portal
+Date: 01/04/24
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d6920b45df.js" crossorigin="anonymous"></script>
+    <!-- style sheets used for icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="FileMaintenance.css">
 
@@ -22,10 +28,6 @@
         
         <div class="wrapper">
         <nav>
-            <div class="logo-p">
-                <img class="profile-picture" src="../assets/user.png" alt="Profile Picture">
-                <span>Hi, [Username]</span>
-            </div>
             <ul>
                 <a href="../index.html">
                     <li>Home</li>
@@ -46,6 +48,8 @@
         </ul>
     </nav>
 
+    <!-- grid used for all the boxs to go in theme with the main menu
+    window.location used to go to different pages as anchors changed the size of the buttons -->
       <div class="grid-container">
         <button class="grid-item" onclick="window.location.href='add/Add_Customer.html' ">Add Customer<br><span class="material-symbols-outlined">person_add</span></button>
         <button class="grid-item" onclick="window.location.href='Delete/Delete.html.php' ">Delete a Customer<br> <span class="material-symbols-outlined">person_cancel</span></button>

@@ -1,3 +1,9 @@
+<!--
+Name: Michal Kuras
+Student Number : C00288136
+Purpose: Delete form for the patient table 
+Date: 20/03/24
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +26,6 @@
     <div class="container">
 
 <nav>
-
-
-            <div class="logo-p">
-                <img class="profile-picture" src="../../assets/user.png" alt="Profile Picture">
-                <span>Hi, [Username]</span>
-            </div>
             <ul>
                 <a href="../../index.html">
                     <li>Home</li>
@@ -89,7 +89,9 @@ session_start();?>
 
 
 <?php
+// php prints onto the screen that the entry was marked as deleted
         if  (isset($_SESSION["patientid"])) {echo "<h1 class='myMessage'>Record deleted for ". $_SESSION["firstname"]. "</h1>";}
+        // session is terminated
         session_destroy();
 ?>
 

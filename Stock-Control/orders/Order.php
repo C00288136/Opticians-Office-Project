@@ -4,6 +4,18 @@ include '../db.con.php';
 date_default_timezone_set('UTC');
 $dbDate = date("Y-m-d", strtotime($_POST['amendDOB'])); //to match date format in the database
 
+$countQuery = "SELECT MAX(PatientID) as max from Patient ";
+$result = mysqli_query($con,$countQuery);
+
+if ($result){
+    $row = mysqli_fetch_assoc($result);
+    $nextPrimaryKey = $row['max'] + 1;
+
+}
+else{
+    die("Error getting the next available primary key");
+}
+
 
 
 $sql = " INSERT INTO ORDERS SET  Name = '$_POST[amendname]', Address = '$_POST[amendaddress]', Eircode = '$_POST[amendeircode]', DOB = '$dbDate', Phone = '$_POST[amendPhone]' WHERE PatientID = '$_POST[amendid]' ";
