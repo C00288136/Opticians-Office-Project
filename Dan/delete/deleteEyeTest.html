@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="C:/xamp/htdocs/Opticians-Office-Project/assets/user.png">
+            <img src="../../assets/logo.webp">
             <p class="logo">Optician Portal</p>
         </div>
     </header>
@@ -24,22 +24,12 @@
             </ul>
         </div>
         <div class="form-container">
-            <form>
+            <form action="addEyeTest.php" method="post">
                 <div class="input-container">
-                    <label for="customerID">Customer ID: </label>
-                    <input type="text" id="customerID" name="customerID" required>
-                    
-                    <label for="RightEye">Right eye:</label>
-                    <input type="text" id="RightEye" name="RightEye" required>
-                    
-                    <label for="LeftEye">Left eye:</label>
-                    <input type="text" id="LeftEye" name="LeftEye" required>
-                    
-                    <label for="TestDate">Test Date:</label>
-                    <input type="date" id="TestDate" name="TestDate" required><br><br>
+                    <label for="PatientID">Please select the entry you want deleted</label>
 
-                    <input type="submit" value="Submit">
-                    <input type="reset" value="Clear">
+                    <input type="submit" value="Delete">
+                    <input type="reset" value="Reset">
                 </div>
             </form>
         </div>

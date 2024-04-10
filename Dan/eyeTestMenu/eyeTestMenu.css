@@ -24,7 +24,7 @@ header {
     padding-top: 15px;
 }
 .navBar {
-    height: 75vh; /* Set height to 100% of viewport height */
+    height: 90vh; /* Set height to 100% of viewport height */
     display: flex;
     flex-direction: column; /* Adjusting flex direction to column */
     justify-content: flex-start; /* Aligning items to the top */
@@ -109,13 +109,21 @@ header {
 }
 
 .form-container {
-    /* margin-left: 100px;
-    margin-top: 100px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 100px;
     margin-left: 100px;
+    background: #ECE5E5;
+    padding: 20px; /* Add padding for better appearance */
 }
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add some gap between each input field */
+}
+
 .grid-container{
     margin: 0 auto;
     display: grid;
