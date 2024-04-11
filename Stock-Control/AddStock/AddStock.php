@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "../db.inc.php";
+    include "../../db.con.php";
     
 
     $maxStockCodeQuery = "SELECT MAX(StockNumber) AS maxStockCode FROM Inventory";

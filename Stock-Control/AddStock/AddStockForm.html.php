@@ -10,28 +10,40 @@
 <html>
 <head>
     <link rel="stylesheet" href="./AddStock.css">
+    <link rel="stylesheet" href="../Nav.css">
     <title>Add Stock Item</title>
     <script src="Validate.js"></script>
 </head>
 
 <body>
-    <div>
     <header class="">
         <div class="logo">
             <img src="../../assets/logo.webp" alt="">
             <p class="logo-text">Optician Portal</p>
         </div>
     </header>
-    </div>
-    <div class="sidenav">
-        <a href="#home">Home</a><br>
-        <a href="../AddStock/AddStockForm.html.php">Add Stock</a><br>
-        <a href="../DeleteStock/DeleteStock.html.php">Delete Stock</a><br>
-        <a href="../AmendStock/AmendView.html.php">Amend/View Stock</a><br>
-    </div>
+    <div class="container">
+    <nav>
+            <ul>
+                <a href="../../index.html">
+                    <li>Home</li>
+                </a>
+                    <a href="../StockMaintenance.html">
+                        <li>Stock Control</li>
+                    </a>
+                    <a href="../DeleteStock/DeleteStock.html.php">
+                        <li>Delete Stock</li>
+                    </a>
+                    <a href="../AddStock/AddStockForm.html.php.">
+                        <li>Add Stock</li>
+                    </a>
+                    <a href="../AmendStock/AmendView.html.php">
+                        <li>Amend/View Stock</li>
+                    </a>
+        </ul>
+    </nav>
     <div class="content">
-    
-    <h2>Add Stock Item Information</h2>
+    <h2>Add Stock Item Information</h2><br>
     <form action="AddStock.php" method="post" onsubmit="return  checkSubmit()">
         <fieldset>
             <div>
@@ -59,7 +71,7 @@
                 <select name="supplierid" id="supplierid">
                     <?php 
                         //Database connection
-                        include "../../db.inc.php";
+                        include "../../db.con.php";
                 
                         $con = mysqli_connect($host, $username, $password, $dbname);
                 
@@ -88,6 +100,7 @@
             </div> 
         </fieldset>
     </form>
+    
             <?php
                 // Check if the session variable is set
                 if(isset($_SESSION["stocknumber"])) {
@@ -98,6 +111,7 @@
                     session_destroy();
                 }
             ?>
+    </div>
     </div>
 </body>
 </html>

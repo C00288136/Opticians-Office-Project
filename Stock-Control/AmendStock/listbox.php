@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
 <?php
-    include "../../db.inc.php";
+    include "../../db.con.php";
 
     // Query database for iventory stock and and supplier name
     $result = $con->query("SELECT StockNumber, Description, CostPrice, RetailPrice, ReorderQty, SupplierID

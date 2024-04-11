@@ -45,7 +45,7 @@
         <select name="amendname" id="amendname" disabled >
                     <?php 
                         //Database connection
-                        include "../../db.inc.php";
+                        include "../../db.con.php";
                 
                         $con = mysqli_connect($host, $username, $password, $dbname);
                 
