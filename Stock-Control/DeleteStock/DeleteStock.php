@@ -1,6 +1,6 @@
 <?php 
     session_start(); 
-    include "../../db.inc.php";
+    include "../../db.con.php";
 
     // Update the record in the database
     $sql = "UPDATE inventory SET deleted_flag = true WHERE StockNumber = '$_POST[stocknumber]'";
