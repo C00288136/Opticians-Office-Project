@@ -1,18 +1,21 @@
+/*
+Student Number : C00288136, C00287940, C00287277
+Purpose: CSS design for the main interface 
+Date: 01/04/24
+ 
+*/
+
+/* elements used for the whole body  */
 body{
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding-bottom: 30px;
+    /* set font and weight to support uniformity in the whole file */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
 
 }
-.profile-picture {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-top: 10px    ;
-}
+
 
 header {
     display: flex;
@@ -23,14 +26,7 @@ header {
     padding-top: 15px;
 }
 
-.logo-p{
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-}
-
-
-
+/* logo flexed to align the text with the picture */
 .logo{
     display: flex;
     align-items: center;
@@ -38,6 +34,7 @@ header {
     font-weight: bold;
     color: #333;
 }
+
 
 .logo img{
     width: 70px;
@@ -53,12 +50,11 @@ header {
 }
 
 .grid-container{
-    
     margin: 0 auto;
     display: grid;
+    /* grid layout used and a repeat of 3 so ensure 3 columns and equal spacing between them */
     grid-template-columns: repeat(3,1fr);
     gap: 50px;
-
     max-width: 80%;
     padding-left:50px;
     padding-top:50px;
