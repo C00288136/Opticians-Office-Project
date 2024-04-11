@@ -1,5 +1,5 @@
 <?php   
-    include "../../db.inc.php";
+    include "../../db.con.php";
 
     date_default_timezone_set('UTC');
     $sql = "UPDATE inventory SET Description = '{$_POST['amenddescription']}',CostPrice = '{$_POST["amendcost"]}',RetailPrice = '{$_POST["amendretail"]}',ReorderQty = '{$_POST["amendretail"]}', SupplierID = '{$_POST["amendname"]}'  WHERE StockNumber = '$_POST[amendid]'";
