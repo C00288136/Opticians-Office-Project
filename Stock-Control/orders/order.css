@@ -106,7 +106,7 @@ a:hover{
     display: grid;
     /* defines the grid layout to be 2 columns with equal width */
     grid-template-columns: repeat(2,1fr);
-    grid-column-gap:20px ;
+    grid-column-gap:30px ;
     text-align: right;
     
 }
@@ -131,14 +131,14 @@ input{
 label{
     text-align: right;
     font-size: 25px;
-    margin-right: 60px ;
+    margin-right: 10px ;
     min-width: 250px;
     grid-column: 1;
 }
 
 
 
-form #Order{
+form #button{
     padding: 20px 20px 20px 20px;
     font-size: 20px;
     background-color: darkgray;
@@ -148,9 +148,11 @@ form #Order{
     margin-right: 30px;
     margin-bottom: 20px;
     border-radius: 20px;
+    max-width: 100px;
+    grid-column: 2;
 }
 
-form #Order:hover{
+form #button:hover{
 
     transition: 0.5s;
     background-color: #93B5C6;

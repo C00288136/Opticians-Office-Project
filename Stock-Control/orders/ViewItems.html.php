@@ -20,29 +20,32 @@
     <!-- nav for quick naviation back the main menu -->
     <nav>
             <ul>
-                <a href="../../index.html">
+            <a href="../../index.html">
                     <li>Home</li>
                 </a>
-                <a href="">
-                    <li>Counter Sales</li>
-                </a>
-                <a href="">
-                    <li>Spectacle Sales</li>
-                </a>
-                <a href="">
+                    <a href="">
+                        <li>Counter Sales</li>
+                    </a>
+                    <a href="">
+                        <li>Spectacle Sales</li>
+                    </a>
+                    <a href="../../Eye-Test-Menu/eyeTestMenu.html">
 
                     <li>Eye Test Menu</li>
                 </a>
-                <a href="">
+                <a href="../../Stock-Control/StockMaintenance.html">
                     <li>Stock Control</li>
                 </a>
+                <a href="../FileMaintenance.html">
+                        <li>File Maintenance</li>
+                    </a>
             </ul>
         </nav>
         <div class="content">
 
         
     <h1>View items / Make Order</h1>
-    <h4>View x`item info click Order to create a order</h4>
+    <h4>View item information <br>Order to create a order</h4>
     
     <?php include 'listbox.php';?>
     
