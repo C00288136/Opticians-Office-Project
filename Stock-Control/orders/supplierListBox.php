@@ -1,5 +1,5 @@
 <?php
-include '../db.con.php' ;
+include '../../db.con.php' ;
 $supsql = "SELECT SupplierID, Name FROM supplier where deleted_flag = 0";
 
 if(!$supresult = mysqli_query($con,$supsql)){

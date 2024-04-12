@@ -57,7 +57,7 @@ nav {
     /* used the specific border radius to only curve the 2 bottom edges */
     height: 100vh;
     /* used to set the height  to 100% of the viewport */
-    width: 10%;
+    width: 12%;
     border-right: 2px solid black;
 }
 
@@ -103,7 +103,7 @@ form {
     flex-direction: column;
     text-align: right;
     background-color: #ece5e5;
-    padding: 5% 5% 5% 5%;
+    padding: 2% 2% 2% 2%;
     border: black solid 4px;
     border-radius: 10px;
 }
@@ -114,8 +114,8 @@ h2{
 }
 
 .input-group {
-    font-size: 30px;    
-    margin-bottom: 15px;
+    font-size: 25px;    
+    margin: 10px 10px 10px 10px;
 }
 
 .input-group label{
