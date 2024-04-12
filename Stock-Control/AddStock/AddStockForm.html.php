@@ -67,7 +67,7 @@
                 <input type="number" name="stockcode" id="stockcode" placeholder="Stock Code" autocomplete="off" oninput="validate()" required>
             </div>
             <div>
-                <label for="supplierid">Supplier ID</label>
+                <label for="supplierid">Supplier</label>
                 <select name="supplierid" id="supplierid">
                     <?php 
                         //Database connection

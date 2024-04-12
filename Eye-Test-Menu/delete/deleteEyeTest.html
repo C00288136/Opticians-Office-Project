@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="eyeTestMenu.css">
+    <link rel="stylesheet" href="deleteEyeTest.css">
     <title>Opticians Menu</title>
 </head>
 <body>
@@ -24,8 +24,13 @@
             </ul>
         </div>
         <div class="form-container">
-            <form>
-                <input type="text">
+            <form action="addEyeTest.php" method="post">
+                <div class="input-container">
+                    <label for="PatientID">Please select the entry you want deleted</label>
+
+                    <input type="submit" value="Delete">
+                    <input type="reset" value="Reset">
+                </div>
             </form>
         </div>
 

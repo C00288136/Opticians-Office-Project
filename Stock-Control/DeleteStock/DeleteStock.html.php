@@ -21,85 +21,96 @@
     <link rel="stylesheet" href="DeleteStock.css"/>
 </head>
 <body>
-<div>
-    <header class="">
-        <div class="logo">
-            <img src="../../assets/logo.webp" alt="">
-            <p class="logo-text">Optician Portal</p>
-        </div>
-    </header>
+<header class="">
+    <div class="logo">
+        <img src="../../assets/logo.webp" alt="">
+        <p class="logo-text">Optician Portal</p>
     </div>
-    <div class="sidenav">
-        <a href="#home">Home</a><br>
-        <a href="../AddStock/AddStockForm.html.php">Add Stock</a><br>
-        <a href="../DeleteStock/DeleteStock.html.php">Delete Stock</a><br>
-        <a href="../AmendStock/AmendView.html.php">Amend/View Stock</a><br>
+</header>
+<div class="container">
+<nav>
+    <ul>
+        <a href="../../index.html">
+            <li>Home</li>
+        </a>
+        <a href="../StockMaintenance.html">
+            <li>Stock Control</li>
+        </a>
+        <a href="../DeleteStock/DeleteStock.html.php">
+            <li>Delete Stock</li>
+        </a>
+        <a href="../AddStock/AddStockForm.html.php.">
+            <li>Add Stock</li>
+        </a>
+        <a href="../AmendStock/AmendView.html.php">
+            <li>Amend/View Stock</li>
+        </a>
+    </ul>
+</nav>
+<div class="content">
+<h2>Choose item to delete</h2>
+<fieldset>
+<?php
+    // Query database for iventory stock and and supplier name
+    $result = $con->query("SELECT StockNumber, Description, CostPrice, Quantity, supplier.Name
+    FROM inventory
+    JOIN supplier ON inventory.SupplierID = supplier.SupplierID WHERE inventory.deleted_flag = false");
+
+    if(!$result){//error check
+        echo "Failed to retrieve data from MySQL: " . $con->error;
+    } else {
+        echo "<select class='stockdesc' name='stockdesc' id='stockdesc' style=''>";
+        echo "<option value='' disabled selected>Select</option>";//initial placeholder
+        // Display items in select dropdown
+        while($row = $result->fetch_assoc()){
+            // make variables for all data and convert to $all for options
+            $id = $row['StockNumber'];
+            $description = $row['Description'];
+            $cost = $row['CostPrice'];
+            $name = $row['Name'];
+            $quantity = $row['Quantity'];
+            $all = "$id,$description,$cost,$name";
+            echo "<option value='" . $all . "'>" . $description . "</option>";
+        } 
+        echo "</select>";
+    }
+    // Close DB connection
+    $con->close();
+?>
+<!-- FORM -->
+<form action="DeleteStock.php" method="post" onsubmit="return submitCheck()">
+    <label for="stocknumber">Stock Number </label>
+    <input type="text" name="stocknumber" id="stocknumber" readonly>
+    <label for="description">Description </label>
+    <input type="text" name="description" id="description" readonly>
+    <label for="cost">Cost Price </label>
+    <input type="text" id="cost" readonly>  
+    <label for="supplier">Supplier Name </label>
+    <input type="text" id="supplier" readonly><br>
+    <div class="button">
+        <input type="submit" value="Delete">
     </div>
-    <h2>Choose item to delete</h2>
-    <div>
-    <fieldset>
-    <?php
-        // Query database for iventory stock and and supplier name
-        $result = $con->query("SELECT StockNumber, Description, CostPrice, Quantity, supplier.Name
-        FROM inventory
-        JOIN supplier ON inventory.SupplierID = supplier.SupplierID WHERE inventory.deleted_flag = false");
+</form>
+</div>
+<?php
+    // Check if the session variable is set
+    if(isset($_SESSION["stocknumber"])) {
+        // Display message if session variables are set
+        echo "<h1 class='myMessage'>Record deleted for StockNumber - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h1>";
+        
+        // Destroy the session to remove the message after displaying it
+        session_destroy();
+    }
+?>
 
-        if(!$result){//error check
-            echo "Failed to retrieve data from MySQL: " . $con->error;
-        } else {
-            echo "<select class='stockdesc' name='stockdesc' id='stockdesc' style='width: 200px;'>";
-            echo "<option value='' disabled selected>Select an option</option>";//initial placeholder
-            // Display items in select dropdown
-            while($row = $result->fetch_assoc()){
-                // make variables for all data and convert to $all for options
-                $id = $row['StockNumber'];
-                $description = $row['Description'];
-                $cost = $row['CostPrice'];
-                $name = $row['Name'];
-                $quantity = $row['Quantity'];
-                $all = "$id,$description,$cost,$name";
-                echo "<option value='" . $all . "'>" . $description . "</option>";
-            } 
-            echo "</select>";
-        }
-        // Close DB connection
-        $con->close();
-    ?>
-    <!-- FORM -->
-    <br>
-    
-    <form action="DeleteStock.php" method="post" onsubmit="return submitCheck()">
-        <div class="fields">
-            <label for="stocknumber">Stock Number </label>
-            <input type="text" name="stocknumber" id="stocknumber" readonly>
-            <label for="description">Description </label>
-            <input type="text" name="description" id="description" readonly>
-            <label for="cost">Cost Price </label>
-            <input type="text" id="cost" readonly>
-            <label for="supplier">Supplier Name </label>
-            <input type="text" id="supplier" readonly><br>
-        </div>
-        <div class="button">
-            <input type="submit" value="Delete">
-        </div>
-    </form>
-    <?php
-        // Check if the session variable is set
-        if(isset($_SESSION["stocknumber"])) {
-            // Display message if session variables are set
-            echo "<h1 class='myMessage'>Record deleted for StockNumber - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h1>";
-            
-            // Destroy the session to remove the message after displaying it
-            session_destroy();
-        }
-    ?>
-
-    <!-- USING select2 libraries and Select2.org and forum guides  -->
-    <!-- Used to add search feature to select -->
-    <script>
+</div> 
+</fieldset>
+<!-- USING select2 libraries and Select2.org and forum guides  -->
+<!-- Used to add search feature to select -->
+<script>
     $(document).ready(function() {      //Calls function when html site is fully loaded
         $('.stockdesc').select2({       //Chooses select field with class 'stockdesc' and makes changes for select2
-        placeholder: 'Select an option' //When loads if no option is selected off the places message
+        placeholder: 'Select' //When loads if no option is selected off the places message
         });
     });
     
@@ -133,8 +144,6 @@
                 return false;
         }
     }
-    </script> 
-    </div> 
-</fieldset>
+</script> 
 </body>
 </html>
