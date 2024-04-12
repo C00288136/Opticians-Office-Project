@@ -9,9 +9,39 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script></head>
 <body>
 
-<div class="container">
-<h1>Make Order</h1>
+<header>
+        <div class="logo">
+            <img src="../../assets/logo.webp" alt="">
+            <p class="logo">Optician Portal</p>
+        </div>
+    </header>
 
+<div class="container">
+
+<nav>
+            <!-- nav for quick naviation back the main menu -->
+            <ul>
+                <a href="../../index.html">
+                    <li>Home</li>
+                </a>
+                <a href="">
+                    <li>Counter Sales</li>
+                </a>
+                <a href="">
+                    <li>Spectacle Sales</li>
+                </a>
+                <a href="">
+
+                    <li>Eye Test Menu</li>
+                </a>
+                <a href="">
+                    <li>Stock Control</li>
+                </a>
+            </ul>
+        </nav>
+        
+        <div class="content">
+<h1>Make Order</h1>
 
 <form>
 <?php include 'supplierListBox.php';?>
@@ -165,6 +195,7 @@
     <form   onsubmit="return confirmCheck()" method="post" id="mainform">
 </form>
 
+</div>
 </div>
 
 </body>

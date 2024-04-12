@@ -54,8 +54,6 @@
         <form id="form" action="add_cust.php" onsubmit="return submitForm()" method="post">
 
             <h2>Add Customer Form</h2>
-
-            <p>
                 <div class="input-group">
                     <label for="name">Name:</label>
                     <input
@@ -66,9 +64,9 @@
                         required
                     />
                 </div>
-            </p>
+            
 
-            <p>
+            
                 <div class="input-group">
                     <label for="Address">Address:</label>
                     <input
@@ -79,17 +77,17 @@
                         required
                     />
                 </div>
-            </p>
+            
 
-            <p>
+            
                 <!-- form validation dont to make sure the correct format is used for the eircode -->
                 <div class="input-group">
                     <label for="EirCode">Eir Code:</label>
                     <input type="text" name="eircode" id="eircode" placeholder="Eircode" onchange="validateForm()">
                 </div>
-            </p>
+            
 
-            <p>
+            
                 <div class="input-group">
                     <label for="dob">Date of Birth:</label>
                     <input
@@ -101,8 +99,9 @@
                         onchange="validateForm()"
                     />
                 </div>
-            </p>
+            
 
+            
             <div class="input-group">
                 <!-- pattern used for phone number -->
                 <label for="PhoneNum">Phone Number:</label>

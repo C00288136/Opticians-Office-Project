@@ -9,15 +9,47 @@
 </head>
 <body>
 
+<header>
+        <div class="logo">
+            <img src="../../assets/logo.webp" alt="">
+            <p class="logo">Optician Portal</p>
+        </div>
+    </header>
+
 <div class="container">
-<h1>View items / Make Order</h1>
-<h4>View item info click Order to create a order</h4>
+    <!-- nav for quick naviation back the main menu -->
+    <nav>
+            <ul>
+                <a href="../../index.html">
+                    <li>Home</li>
+                </a>
+                <a href="">
+                    <li>Counter Sales</li>
+                </a>
+                <a href="">
+                    <li>Spectacle Sales</li>
+                </a>
+                <a href="">
 
-<?php include 'listbox.php';?>
+                    <li>Eye Test Menu</li>
+                </a>
+                <a href="">
+                    <li>Stock Control</li>
+                </a>
+            </ul>
+        </nav>
+        <div class="content">
 
-    <p id="display"></p>
+        
+    <h1>View items / Make Order</h1>
+    <h4>View x`item info click Order to create a order</h4>
     
-    <form  action= "Order.php" onsubmit="return confirmCheck()" method="post">
+    <?php include 'listbox.php';?>
+    
+        
+    <p id="display" hidden></p>
+    
+    <form  action= "Order.php" onsubmit="return confirmCheck()" method="post" id="mainform">
         
     <label for="StockNumber">Stock Number</label>
     <input type="text" name="StockNumber" id="StockNumber" disabled>
@@ -41,10 +73,10 @@
 
     <div id="error-message"></div>
 
-    <input type="button" value="Create Order" id="viewViewbutton" onclick="toggleLock()">
-    <input type="submit" id="button" value="Save Changes">
+    <input type="button" value="Create Order" id="Order" onclick="window.location.href='Order.html.php';">
 </form>
 
+</div>
 </div>
 
 </body>
