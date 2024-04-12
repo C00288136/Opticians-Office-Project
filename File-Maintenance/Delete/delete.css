@@ -1,10 +1,16 @@
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: Styling for the Delete page didnt make coments 
+Date: 01/04/24
+*/
 body{
-    background-color: rgb(255, 255, 255);
+    /* font we decided on */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     
 }
 .profile-picture {
+    /* measurments used for the profile picture for all the pages */
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -13,10 +19,12 @@ body{
 }
 
 header {
+    /* header flexed so the logo and name align  */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    /* choose pastel colours for this project */
     background-color: #93B5C6;
     padding-top: 15px;
     height: 120px;
@@ -37,6 +45,7 @@ header {
 }
 
 .logo img{
+    /* sizing used for the logo */
     width: 70px;
     height: 70px;
     margin-bottom: 10px;
@@ -87,6 +96,7 @@ display: flex;
 background-color: whitesmoke;
 }
 .content{
+    /* this includes any text and the form */
    margin: auto;
    background-color: #ece5e5;
     padding: 5% 5% 5% 5%;
@@ -101,6 +111,7 @@ h1{
 form {
     margin: auto;
     display: grid;
+    /* using a grid repeating size for equal spacing */
     grid-template-columns: repeat(2,1fr);
     grid-column-gap:20px ;
     text-align: right;
@@ -121,7 +132,9 @@ input{
     display: flex;
     margin-bottom: 15px;
     padding: 10px 20px;
+    /* lets the flexed inputs grow to the desired size */
     flex: 1;
+    /* used to make all the inputs the same size */
     min-width: 250px;
     font-size: 20px;
     border: 2px solid black;

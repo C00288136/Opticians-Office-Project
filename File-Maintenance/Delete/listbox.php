@@ -1,3 +1,8 @@
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: PHP listbox to retrieve data from the patients table where the entry is not marked as deleted
+Date: 10/03/24
+*/
 <?php
 include '../../db.con.php';
 date_default_timezone_set('UTC');
