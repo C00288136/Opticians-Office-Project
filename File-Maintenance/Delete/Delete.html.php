@@ -36,12 +36,15 @@ Date: 20/03/24
                     <a href="">
                         <li>Spectacle Sales</li>
                     </a>
-                    <a href="">
+                    <a href="../../Eye-Test-Menu/eyeTestMenu.html">
 
-                        <li>Eye Test Menu</li>
-                    </a>
-                    <a href="">
-                        <li>Stock Control</li>
+                    <li>Eye Test Menu</li>
+                </a>
+                <a href="../../Stock-Control/StockMaintenance.html">
+                    <li>Stock Control</li>
+                </a>
+                <a href="../FileMaintenance.html">
+                        <li>File Maintenance</li>
                     </a>
         </ul>
     </nav>
@@ -90,7 +93,7 @@ session_start();?>
 
 <?php
 // php prints onto the screen that the entry was marked as deleted
-        if  (isset($_SESSION["patientid"])) {echo "<h1 class='myMessage'>Record deleted for ". $_SESSION["firstname"]. "</h1>";}
+        if  (isset($_SESSION["patientid"])) {echo "<h1 class='myMessage'>Record deleted for ". $_SESSION["name"]. "</h1>";}
         // session is terminated
         session_destroy();
 ?>

@@ -30,7 +30,7 @@ if($result){
                 echo "No records updated. Check if the record exists.<br>";
             }
             $_SESSION['patientid'] = $_POST['delid'];
-            $_SESSION['firstname'] = $_POST['deleteName'];  
+            $_SESSION['name'] = $_POST['deleteName'];  
         } else {
             echo "Error updating record: " . mysqli_error($con) . "<br>";
         }

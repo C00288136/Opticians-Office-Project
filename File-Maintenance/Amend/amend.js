@@ -42,7 +42,7 @@ function populate(){
         }
     }
     function confirmCheck() {
-    const birthdate = new Date(document.getElementById('amendDOB').value);
+    const birthdate = new Date(document.getElementById('amendDOB').value).toLocaleDateString();
     var name = document.getElementById("amendname").value
     var address = document.getElementById("amendaddress").value;
     var eircode = document.getElementById("amendeircode").value;

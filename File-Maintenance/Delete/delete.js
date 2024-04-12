@@ -33,6 +33,7 @@ function populate(){
                 // passes the delid to the post php 
                 if (response){       
                         document.getElementById("delid").disabled = false;
+                        document.getElementById("deleteName").disabled = false;
                          return true;
                 }
                 else{
