@@ -15,15 +15,28 @@
         </div>
     </header>
     </div>
-    <div class="sidenav">
-        <a href="#home">Home</a><br>
-        <a href="../AddStock/AddStockForm.html.php">Add Stock</a><br>
-        <a href="../DeleteStock/DeleteStock.html.php">Delete Stock</a><br>
-        <a href="../AmendStock/AmendView.html.php">Amend/View Stock</a><br>
-    </div>
-    <div>
+    <div class="container">
+    <nav>
+        <ul>
+            <a href="../../index.html">
+                <li>Home</li>
+            </a>
+            <a href="../StockMaintenance.html">
+                <li>Stock Control</li>
+            </a>
+            <a href="../DeleteStock/DeleteStock.html.php">
+                <li>Delete Stock</li>
+            </a>
+            <a href="../AddStock/AddStockForm.html.php.">
+                <li>Add Stock</li>
+            </a>
+            <a href="../AmendStock/AmendView.html.php">
+                <li>Amend/View Stock</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="content">
     <h2>Amend/View Stock</h2>
-    </div>
     <fieldset>
     <?php
         include "listbox.php";
@@ -66,11 +79,14 @@
                     ?>
                 </select>
     </div>
-        <br><br>
+    <div class="button">
         <input type="button" value="Amend Details" id="amendViewButton" onclick="toggleLock()">
         <input type="submit" value="Save Changes">
+    </div>
     </form>
 </fieldset>
+</div>
+    </div>
 
 </body>
 </html>
