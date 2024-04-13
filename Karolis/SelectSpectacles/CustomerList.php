@@ -36,10 +36,10 @@
 ?>
 <script src="./SelectSpectacles.js"></script>
 <script>
-$(document).ready(function() {
-    // Initialize Select2 for the select dropdown
-    $('#listbox').select2();
-
+$(document).ready(function() {      //Calls function when html site is fully loaded
+        $('.stockdesc').select2({       //Chooses select field with class 'stockdesc' and makes changes for select2
+        placeholder: 'Select an option' //When loads if no option is selected off the places message
+        });
     // Call the populate function when an option is selected
     $('#listbox').on('change', function() {
         populate();

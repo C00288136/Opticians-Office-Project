@@ -1,11 +1,7 @@
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(255,255,255);
+    font-weight: bold;
 }
 header {
     display: flex;
@@ -13,6 +9,7 @@ header {
     align-items: center;
     text-align: center;
     background-color: #93B5C6;
+    height: 15%;
     padding-top: 15px;
     
 }
@@ -39,36 +36,88 @@ header {
     border-radius: 10px;
 
 }
-
 .logo-p{
     font-size: 20px;
 }
-div.sidenav {
-    min-height: 85%;
-    width: 200px;
-    position: fixed;
-    background-color: rgb(188, 164, 164);
-    padding-top: 20px;
+nav {
+    display: flex;
+    background-color: #e4d8dc;
+    font-size: 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    max-height: 85vh;
+    height: 85vh;
+    width: 230px;
+}
+nav ul{
+    margin-top: 60px;
+    text-decoration: none;
+    list-style-type: none;
+}
+nav li{
+    margin: 10px 0 40px 0px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    transition: 0.3s;
+    color: white;
+}
+.container {
+    display: grid;
+    grid-template-columns: 230px 1fr; /* 1x2 grid layout */
+}
+.content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute items evenly along the vertical axis */
-    border-radius:  0 0 1rem;
+    width: calc(100% - 230px); /* adjust the width to take up full screen for centering */
+    align-items: center;
+    margin-top: 20px; 
 }
-
-.sidenav a {
-    border:1px solid #e4d8dc;
-    border-radius: 1rem;
-    padding:2rem 3rem;
-    text-decoration: none;
+h2{
+    display: flex;
+    justify-content: center;
+    margin: 45px;
+    font-size: 40px;
+}
+fieldset{
+    border-radius: 10px;
+    background-color: #ECE5E5;
+    border: 2px solid black;
+    width: fit-content;
+    padding: 10px;
+    font-size: 25px;
+    margin: 1rem;
+}
+form input,
+form select{
+    border: 2px solid black;
+    margin:10px; 
+}
+label{
+    margin: 10px 0px;
+}
+form input, select {
+    background-color: white;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10px;
+    min-width: 260px;
+    min-height: 60;
+    text-indent: 3px;
     font-size: 20px;
-    color: #333;
-    display: block;
-    text-align: center;
-    
 }
-.sidenav a:hover {
-    color: #333;
-    background-color: #e4d8dc;
+form{
+    margin: 10px 20px;
+    display: grid;
+    justify-items: end;
+    grid-template-columns: auto minmax(0, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
 }
 #display{
     display: none;

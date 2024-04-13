@@ -1,5 +1,7 @@
 body{
-    background-color: rgb(255, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(255,255,255);
+    font-weight: bold;
 }
 .profile-picture {
     width: 50px;
@@ -49,16 +51,15 @@ header {
 }
 
 nav {
+    display: flex;
     background-color: #e4d8dc;
     font-size: 25px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: 90vh;
+    max-height: 85vh;
+    height: 85vh;
     width: 230px;
-
-
 }
-
 nav ul{
     margin-top: 60px;
     text-decoration: none;
@@ -67,47 +68,6 @@ nav ul{
 nav li{
     margin: 10px 0 40px 0px;
 }
-.wrapper{
-display: flex;
-}
-.grid-container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 40px;
-
-    max-width: 80%;
-    padding-left:50px;
-    padding-top:30px;
-
-
-}
-
-.grid-container button{
-    height: 80%;
-    border-radius: 10px;
-    background-color: #ECE5E5;
-
-
-}
-
-.grid-item{
-    font-size: 25px;
-    padding: 30px ;
-    text-align: center;
-}
-
-.grid-container button:hover{
-    transition: 0.3s;
-        background-color: #baa8a8;
-    
-}
-
-
-.material-symbols-outlined, .contact-lens, .glasses {
-width: 50px;
-font-size: 50px;
-}
-
 a {
     text-decoration: none;
     color: black;
@@ -116,4 +76,37 @@ a {
 a:hover{
     transition: 0.3s;
     color: white;
+}
+.wrapper{
+display: flex;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+    min-width: (100% - 230px);
+    padding-left:50px;
+    padding-top:30px;
+}
+
+.grid-container button{
+    height: 80%;
+    border-radius: 10px;
+    background-color: #ECE5E5;
+
+}
+.grid-item{
+    font-size: 25px;
+    padding: 100px ;
+    text-align: center;
+}
+
+.grid-container button:hover{
+    transition: 0.3s;
+        background-color: #baa8a8;
+    
+}
+.material-symbols-outlined, .contact-lens, .glasses {
+width: 50px;
+font-size: 50px;
 }
