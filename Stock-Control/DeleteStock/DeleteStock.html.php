@@ -92,20 +92,19 @@
         <input type="submit" value="Delete">
     </div>
 </form>
-</div>
+</fieldset>
 <?php
     // Check if the session variable is set
     if(isset($_SESSION["stocknumber"])) {
         // Display message if session variables are set
-        echo "<h1 class='myMessage'>Record deleted for StockNumber - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h1>";
+        echo "<h3 class='myMessage'>Record deleted for StockNumber - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h3>";
         
         // Destroy the session to remove the message after displaying it
         session_destroy();
     }
 ?>
-
+</div>
 </div> 
-</fieldset>
 <!-- USING select2 libraries and Select2.org and forum guides  -->
 <!-- Used to add search feature to select -->
 <script>

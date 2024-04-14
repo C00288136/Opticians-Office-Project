@@ -24,7 +24,9 @@
     // SQL query to add new stock item
     $sql = "Insert into Inventory (StockNumber, Description, CostPrice, RetailPrice, ReorderQty, SupplierID, SupplierStockCode) VALUES ('$nextStockCode','$_POST[description]', '$_POST[cost]', '$_POST[retail]', '$_POST[reorder]', '$_POST[supplierid]', '$_POST[stockcode]')"; //query
     // Error output
-    
+    if(!mysqli_query($con, $sql)) {
+        echo "Error updating record: " . mysqli_error($con);
+    } 
     // Set session variables
     $_SESSION["stocknumber"] = $nextStockCode;
     $_SESSION["description"] = $_POST['description'];
