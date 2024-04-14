@@ -1,6 +1,12 @@
 <?php
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: PHP for receiving supplier id and querying the items sold by the supplier
+Date: 12/04/24
+*/
 include '../../db.con.php';
 
+// supplierid received from the ajax post
 $supID = $_POST['supplierID'];
 
 

@@ -1,3 +1,9 @@
+<!-- 
+Name: Michal Kuras
+Student Number : C00288136
+Purpose: HTML for viewing items in the inventory before making a order
+Date: 12/04/24
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +58,7 @@
         
     <p id="display" hidden></p>
     
-    <form  action= "Order.php" onsubmit="return confirmCheck()" method="post" id="mainform">
+    <form id="mainform">
         
     <label for="StockNumber">Stock Number</label>
     <input type="text" name="StockNumber" id="StockNumber" disabled>

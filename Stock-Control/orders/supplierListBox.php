@@ -1,4 +1,9 @@
 <?php
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: PHP for querying the list of Suppliers
+Date: 12/04/24
+*/
 include '../../db.con.php' ;
 $supsql = "SELECT SupplierID, Name FROM supplier where deleted_flag = 0";
 

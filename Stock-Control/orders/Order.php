@@ -1,5 +1,4 @@
 <?php
-/*
 /* Name: Michal Kuras
 Student Number : C00288136
 Purpose: PHP for posting data into the orders table and the orders/items
@@ -167,8 +166,8 @@ mysqli_close($con);
 
 <script>
     // js to display the php message in a alert and bring the user back to the View window
-    window.location.href = "View.html.php";
-    var message = <?php echo $message; ?>
-    alert($message)
+    window.location.href = "ViewItems.html.php";
+    alert("Order has been created\nOrder ID:<?php echo $nextPrimaryKey;?> ")
+    
 
 </script>

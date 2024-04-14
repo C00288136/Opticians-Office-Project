@@ -1,3 +1,8 @@
+<!-- 
+Student Number : C00288136
+Purpose: HTML form for orders
+Date: 12/04/24
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +11,7 @@
     <title>View Items</title>
     <link rel="stylesheet" type="text/css" href="order.css">
 <script src="order.js"></script>
+<!-- script to include jquery library -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script></head>
 <body>
 
@@ -47,15 +53,15 @@
 <h1>Make Order</h1>
 
 <form>
+    <!-- form includes supplier listbox for a list of available supplier which gets posted to retrieve the items they sell -->
 <?php include 'supplierListBox.php';?>
     <input type="button" value="Select Supplier" id="submitSup">
     <input type="hidden" id="supplier"  name="supplier">
 </form>
 
-
-
-
+<!-- prints off the items that were retrieved from the sql query in SupplierListBox -->
 <div id="itemsTable" hidden></div>
+<!-- second form used for posting order data which will get inserted into the db -->
 <form action="Order.php"   onsubmit="return confirmCheck()" method="post" id="mainform">
 </form>
 
@@ -63,6 +69,8 @@
 </div>
 
 <script>
+    // added a action listener to the supplier list box created by the php file
+    // on click a value of the Supplier ID is saved so it can be posted by the ajax function
 document.getElementById("Suplistbox").addEventListener("click",function(){
     var selectedValue = this.value;
     var supplierparts = selectedValue.split(",")
@@ -85,18 +93,16 @@ $(document).ready(function(){
         }
 
         $.ajax({
-            type: "POST",
-            url: "itemListbox.php",
+            type: "POST", //method of posting
+            url: "itemListbox.php", //destination
             data: {
-                supplierID : supplierID
+                supplierID : supplierID //data object which is being sent over
             },
-            cache: false,
             success: function(data){
+                // upon success a function runs which takes in a data set and updates the content of the itemsTable element with the data
                 $("#itemsTable").html(data);
+                // function is ran to build the table inside of the form
                 createFormFields();
-            },
-            error: function(xhr,status,error){
-                console.log(xhr);
             }
         });   
     })

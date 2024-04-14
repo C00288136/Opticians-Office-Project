@@ -1,4 +1,9 @@
 <?php
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: PHP for the inventory items listbox
+Date: 12/04/24
+*/
 include '../../db.con.php' ;
 date_default_timezone_set('UTC');
 

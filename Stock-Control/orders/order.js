@@ -1,7 +1,26 @@
+/* Name: Michal Kuras
+Student Number : C00288136
+Purpose: JS scripts for the orders form
+Date: 12/04/24
+*/
+function populate(){
+   
+    var sel = document.getElementById("listbox");
+    var result;
+    result = sel.options[sel.selectedIndex].value;
 
+    var personalDetails = result.split(',');
+    document.getElementById("display").innerHTML = "The details of the selected person are :" + result;
+    document.getElementById("StockNumber").value = personalDetails[0];
+    document.getElementById("Description").value = personalDetails[1];
+    document.getElementById("Quantity").value = personalDetails[2];
+    document.getElementById("ReorderQty").value = personalDetails[3];
+    document.getElementById("SupplierID").value = personalDetails[4];
+    
+    }
 function createFormFields() {
     // function i created to dynamically create a table depending on the amount of entires needed which are 
-    // recieved from the itemListbox
+    // received from the itemListbox
     var sel = document.getElementById("itemsTable");
     // trim used to only get the text content of the element
     var content = sel.textContent.trim();
@@ -58,7 +77,7 @@ function createFormFields() {
         Quantity.name = details[i] + "_quantity"; // Concatenate stock ID with "_quantity"
         Quantity.id = details[i];
         Quantity.min = 0;
-        Quantity.max = 100;
+        Quantity.max = 200;
         td3.appendChild(Quantity);
 
 
@@ -95,7 +114,7 @@ function createFormFields() {
     // using the $ which is a jquery function to append the table div and submit to the form
     // works the same as if i made a mainform var from the element
     $('#mainform').append(table);
-    $('#mainform').append(divElement);
+    // $('#mainform').append(divElement);
     $('#mainform').append(submit);
 }
 
