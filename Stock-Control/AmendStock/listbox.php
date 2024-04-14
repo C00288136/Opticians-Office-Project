@@ -1,8 +1,15 @@
+<!-- 
+    Karolis Grigaliunas
+    C00287940
+    Amend Stock Listbox
+ -->
+<!-- Import Select2 libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
 <?php
+// connection
     include "../../db.con.php";
 
     // Query database for iventory stock and and supplier name
@@ -25,7 +32,7 @@
             $name = $row['SupplierID'];
             
             $all = "$id,$description,$cost,$retail,$reorder,$name";
-            echo "<option value='" . $all . "'>" . $description . "</option>";
+            echo "<option value='" . $all . "'>" . $description . "</option>"; //Set select values 
         } 
         echo "</select>";
     }
@@ -33,6 +40,8 @@
     $con->close();
 ?>
 
+<!-- USING select2 libraries and Select2.org and forum guides  -->
+<!-- Used to add search feature to select -->
 <script>
 $(document).ready(function() {
     // Initialize Select2 for the select dropdown

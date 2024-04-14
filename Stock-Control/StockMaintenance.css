@@ -1,40 +1,35 @@
+/*-- CSS for body and header and sidenav */
+/* CSS for font and background */
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: rgb(255,255,255);
     font-weight: bold;
 }
-.profile-picture {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-top: 10px    ;
-}
-
+/* CSS for top Header */
 header {
     display: flex;
-    justify-content: center;
+    justify-content: center;/* Align Header items to centre */
     align-items: center;
     text-align: center;
-    background-color: #93B5C6;
+    background-color: #93B5C6; /* Light Blue Colour  */
+    height: 15%;
     padding-top: 15px;
-    height: 120px;
 }
-
+/* Logog text */
 .logo-p{
     padding-left: 10px;
     display: flex;
     align-items: center;
 }
-
+/* Logo CSS*/
 .logo{
     display: flex;
     align-items: center;
     font-size: 30px;
     font-weight: bold;
-    color: #333;
+    color: #333;/*  background of logo as grey*/
 }
-
+/* Logo image sizing */
 .logo img{
     width: 70px;
     height: 70px;
@@ -43,16 +38,14 @@ header {
     border-radius: 10px;
 
 }
-
+/* header text sizing */
 .logo-p{
     font-size: 20px;
-    background-color: #e4d8dc;
-    width: max-content;
 }
-
+/* Side nav CSS font size and shape of bar*/
 nav {
     display: flex;
-    background-color: #e4d8dc;
+    background-color: #e4d8dc; /* Pale Pastel Pink Background */
     font-size: 25px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -60,6 +53,7 @@ nav {
     height: 85vh;
     width: 230px;
 }
+/* Nav List CSS */
 nav ul{
     margin-top: 60px;
     text-decoration: none;
@@ -68,11 +62,12 @@ nav ul{
 nav li{
     margin: 10px 0 40px 0px;
 }
+/* Nav text CSS */
 a {
     text-decoration: none;
-    color: black;
+    color: black;           
 }
-
+/* Text on hover CSS */
 a:hover{
     transition: 0.3s;
     color: white;
@@ -80,6 +75,7 @@ a:hover{
 .wrapper{
 display: flex;
 }
+/* Grid fro buttons */
 .grid-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -88,11 +84,11 @@ display: flex;
     padding-left:50px;
     padding-top:30px;
 }
-
+/* Button CSS */
 .grid-container button{
     height: 80%;
     border-radius: 10px;
-    background-color: #ECE5E5;
+    background-color: #ECE5E5; /* pastel */
 
 }
 .grid-item{
@@ -103,9 +99,10 @@ display: flex;
 
 .grid-container button:hover{
     transition: 0.3s;
-        background-color: #baa8a8;
+        background-color: #baa8a8; /* darker pastel */
     
 }
+/* Icon CSS */
 .material-symbols-outlined, .contact-lens, .glasses {
 width: 50px;
 font-size: 50px;
