@@ -1,11 +1,7 @@
 body{
-    background-color: rgb(188, 164, 164);
-
-    background-color: rgb(255, 255, 255);
-
-    border-radius: 10px;
-    padding-bottom: 30px;
-
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(255,255,255);
+    font-weight: bold;
 }
 .profile-picture {
     width: 50px;
@@ -22,36 +18,7 @@ header {
     text-align: center;
     background-color: #93B5C6;
     padding-top: 15px;
-}
-.navBar {
-    height: 90vh; /* Set height to 100% of viewport height */
-    display: flex;
-    flex-direction: column; /* Adjusting flex direction to column */
-    justify-content: flex-start; /* Aligning items to the top */
-    align-items: flex-start; /* Aligning items to the start */
-    background-color: #ECE5E5;
-    width: fit-content;
-}
-
-.navBar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 20px 0; /* Adjusting top and bottom padding */
-    width: 200px;
-    background-color: #ECE5E5;
-}
-
-.navBar li a {
-    display: block;
-    color: #000;
-    padding: 20px 16px; /* Increase padding for more vertical space */
-    text-decoration: none;
-}
-
-/* Change the link color on hover */
-.navBar li a:hover {
-    background-color: #555;
-    color: white;
+    height: 120px;
 }
 
 .logo-p{
@@ -74,80 +41,71 @@ header {
     margin-bottom: 10px;
     margin-right: 20px;
     border-radius: 10px;
-}
-
-.logo-p{
-    font-size: 20px;
-}
-
-
-
-.logo{
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #333;
-}
-
-.logo img{
-    width: 70px;
-    height: 70px;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    border-radius: 10px;
 
 }
 
 .logo-p{
     font-size: 20px;
+    background-color: #e4d8dc;
+    width: max-content;
 }
 
-
-.container {
+nav {
     display: flex;
+    background-color: #e4d8dc;
+    font-size: 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    max-height: 85vh;
+    height: 85vh;
+    width: 230px;
+}
+nav ul{
+    margin-top: 60px;
+    text-decoration: none;
+    list-style-type: none;
+}
+nav li{
+    margin: 10px 0 40px 0px;
+}
+a {
+    text-decoration: none;
+    color: black;
 }
 
-.form-container {
-    flex-direction: column;
-    height: fit-content;
-    margin-top: 100px;
-    margin-left: 100px;
-    background: #ECE5E5;
-    padding: 20px; /* Add padding for better appearance */
+a:hover{
+    transition: 0.3s;
+    color: white;
 }
-
-
-.input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Add some gap between each input field */
+.wrapper{
+display: flex;
 }
-
 .grid-container{
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3,1fr);
     gap: 40px;
-    margin-top: 10px;
-    margin-bottom: 20px ;
-    max-width: 80%;
-
+    min-width: (100% - 230px);
+    padding-left:50px;
+    padding-top:30px;
 }
 
 .grid-container button{
-
-    
+    height: 80%;
     border-radius: 10px;
     background-color: #ECE5E5;
-    padding: 50px 10px 50px 10px;
 
 }
-
 .grid-item{
     font-size: 25px;
+    padding: 100px ;
+    text-align: center;
 }
 
+.grid-container button:hover{
+    transition: 0.3s;
+        background-color: #baa8a8;
+    
+}
 .material-symbols-outlined, .contact-lens, .glasses {
 width: 50px;
 font-size: 50px;
