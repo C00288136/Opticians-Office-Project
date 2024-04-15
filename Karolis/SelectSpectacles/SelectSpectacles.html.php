@@ -1,3 +1,8 @@
+<!-- 
+    Karolis Grigaliunas
+    C00287940
+    Select Spectacles Form
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +11,7 @@
     <title>Spectacle Selection</title>
 </head>
 <div>
+    <!-- header -->
     <header class="">
         <div class="logo">
             <img src="../../assets/logo.webp" alt="">
@@ -15,6 +21,7 @@
 </div>
     
 <body>
+    <!-- sidenav -->
 <div class="container">
     <nav>
     <ul>
@@ -37,12 +44,13 @@
     </nav>
 
     <div class="content">
+        <!-- Main Form -->
     <h2>Select Spectacles</h2>
     <fieldset>
         <?php
             include "./CustomerList.php";
         ?>
-        <p id="display"></p>
+        <p id="display"></p><!-- display to hold data from listbox -->
         <form>
             <label for="name">Name</label>
             <input type="text" name="name" id="name" readonly>

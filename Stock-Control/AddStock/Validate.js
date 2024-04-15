@@ -1,3 +1,7 @@
+    // Karolis Grigaliunas
+    // C00287940
+    // Add Stock Javascript
+
 function validateDecimal(input){
     var value = input.value;
     if (value.indexOf('.') !== -1) {
@@ -15,11 +19,12 @@ function validateDecimal(input){
     else 
         return true;
 }
+// Cost values check 
 function validateCost(){
     var costInput = document.getElementById("cost");
     var cost = parseFloat(costInput.value);
     var errorMsg = document.getElementById("errorMsg");
-
+    // Error message output
     if(cost<=0){
         errorMsg.textContent = "Values must be greater than 0";
         costInput.style.border = "2px solid red";
@@ -34,11 +39,12 @@ function validateCost(){
         return true;
     }
 }
+// Retail value check
 function validateRetail(){
     var retailInput = document.getElementById("retail");
     var retail = parseFloat(retailInput.value);
     var errorMsg = document.getElementById("errorMsg");
-
+    // Error message output
     if(retail<=0){
         errorMsg.textContent = "Values must be greater than 0";
         retailInput.style.border = "2px solid red";
@@ -78,6 +84,7 @@ function validate() {
     var errorMsg = document.getElementById("errorMsg");
     Clear();    
 
+    // Validate values are not 0
     if(parseInt(codeInput.value)<=0){
         codeInput.style.border = "2px solid red";
         errorMsg.textContent = "Values must be greater than 0";
@@ -88,6 +95,8 @@ function validate() {
     }
     validateRetail();
     validateCost();
+
+    // validate if retail is less than cost
     if(validateCost() && validateRetail()){
         if(cost>=retail){
         errorMsg.textContent = "Cost Price can't be greater than Retail Price";
@@ -95,9 +104,10 @@ function validate() {
         }
     }
 }
-
+// Check for error message
 function checkSubmit(){
     var errorMsg = document.getElementById("errorMsg");
+    // If error message empty validate from user to confirm
     if(errorMsg.textContent == ""){
         response = confirm("Confirm That these are the correct details ");
         if(response){
