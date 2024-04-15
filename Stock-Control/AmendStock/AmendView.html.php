@@ -1,3 +1,12 @@
+<!-- 
+    Karolis Grigaliunas
+    C00287940
+    Amend Stock Form
+ -->
+ <?php 
+//  Session start for output query message
+    session_start();
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +17,7 @@
 </head>
 <body>
 <div>
+    <!-- Header -->
     <header class="">
         <div class="logo">
             <img src="../../assets/logo.webp" alt="">
@@ -16,6 +26,7 @@
     </header>
     </div>
     <div class="container">
+        <!-- sidenav -->
     <nav>
         <ul>
             <a href="../../index.html">
@@ -36,6 +47,7 @@
         </ul>
     </nav>
     <div class="content">
+        <!-- Main content form -->
     <h2>Amend/View Stock</h2>
     <fieldset>
     <?php
@@ -56,28 +68,28 @@
         <input type="text" name="amendreorder" id="amendreorder" disabled>
         <label for="amendname">Supplier Name</label>
         <select name="amendname" id="amendname" disabled >
-                    <?php 
-                        //Database connection
-                        include "../../db.con.php";
-                
-                        $con = mysqli_connect($host, $username, $password, $dbname);
-                
-                        if(!$con){
-                            echo "Failed to connect to MySQL" . mysqli_connect_error();
-                        }
+            <?php 
+                //Database connection
+                include "../../db.con.php";
+        
+                $con = mysqli_connect($host, $username, $password, $dbname);
+                // Error output
+                if(!$con){
+                    echo "Failed to connect to MySQL" . mysqli_connect_error();
+                }
 
-                        // Query to get suppliers
-                        $result = $con->query("SELECT SupplierID, Name FROM Supplier");
+                // Query to get suppliers
+                $result = $con->query("SELECT SupplierID, Name FROM Supplier");
 
-                        // Output suppliers in dropdown menu
-                        while($row = $result->fetch_assoc()){
-                            echo "<option value='" . $row['SupplierID'] . "'>" . $row['Name'] . "</option>";
-                        }
+                // Output suppliers in dropdown menu
+                while($row = $result->fetch_assoc()){
+                    echo "<option value='" . $row['SupplierID'] . "'>" . $row['Name'] . "</option>";
+                }
 
-                        // Close DB connection
-                        $con->close();
-                    ?>
-                </select>
+                // Close DB connection
+                $con->close();
+            ?>
+        </select>
     </div>
     <div class="button">
         <input type="button" value="Amend Details" id="amendViewButton" onclick="toggleLock()">
@@ -85,8 +97,17 @@
     </div>
     </form>
 </fieldset>
+<?php
+    // Check if the session variable is set
+    if(isset($_SESSION["stocknumber"])) {
+        // Display message if session variables are set
+        echo "<h3 class='myMessage'>Stock Item Updated  - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h3>";
+        
+        // Destroy the session if refreshed
+        session_destroy();
+    }
+?>
 </div>
-    </div>
-
+</div>
 </body>
 </html>

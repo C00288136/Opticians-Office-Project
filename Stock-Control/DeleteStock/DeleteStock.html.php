@@ -69,7 +69,7 @@
             $cost = $row['CostPrice'];
             $name = $row['Name'];
             $quantity = $row['Quantity'];
-            $all = "$id,$description,$cost,$name";
+            $all = "$id,$description,$cost,$name,$quantity";
             echo "<option value='" . $all . "'>" . $description . "</option>";
         } 
         echo "</select>";
@@ -86,25 +86,25 @@
     <label for="cost">Cost Price </label>
     <input type="text" id="cost" readonly>  
     <label for="supplier">Supplier Name </label>
-    <input type="text" id="supplier" readonly><br>
+    <input type="text" id="supplier" readonly>
+    <input type="text" id="quantity" readonly><br>
     <div class="button">
         <input type="submit" value="Delete">
     </div>
 </form>
-</div>
+</fieldset>
 <?php
     // Check if the session variable is set
     if(isset($_SESSION["stocknumber"])) {
         // Display message if session variables are set
-        echo "<h1 class='myMessage'>Record deleted for StockNumber - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h1>";
+        echo "<h3 class='myMessage'>Record deleted for StockNumber - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h3>";
         
         // Destroy the session to remove the message after displaying it
         session_destroy();
     }
 ?>
-
+</div>
 </div> 
-</fieldset>
 <!-- USING select2 libraries and Select2.org and forum guides  -->
 <!-- Used to add search feature to select -->
 <script>
@@ -124,26 +124,25 @@
             $('#description').val(dataParts[1]);
             $('#cost').val(dataParts[2]);
             $('#supplier').val(dataParts[3]);
+            $('#quantity').val(dataParts[4]);
         }
     });
     // Validation check
-    function submitCheck(){
-        var stocknumber = document.getElementById("stocknumber").value;
-        var description = document.getElementById("description").value;
-        if((stocknumber === "")){
-            alert("No option chosen")
-            return false;
-        }
-        else{
-            var stocknumber = document.getElementById("stocknumber").value;
-            var description = document.getElementById("description").value;
-            var result = confirm("Item: " + stocknumber + " - " + description + " will be deleted. Are you sure?");
-            if(result)
-                return true;
-            else
-                return false;
-        }
+    function submitCheck() {
+    var stocknumber = document.getElementById("stocknumber").value;
+    var description = document.getElementById("description").value;
+    var quantity = document.getElementById("quantity").value; // Retrieve quantity from PHP variable
+    if (stocknumber === "") { 
+        alert("No option chosen");
+        return false;
+    } else if (quantity != 0) { // Check if quantity is not zero
+        alert("Selected item has stock left in inventory");
+        return false;
+    } else {
+        var result = confirm("Item: " + stocknumber + " - " + description + " will be deleted. Are you sure?");
+        return result;
     }
+}
 </script> 
 </body>
 </html>

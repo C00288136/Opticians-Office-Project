@@ -1,51 +1,55 @@
 <!-- 
     Karolis Grigaliunas
     C00287940
-    Delete Stock Form
+    Add Stock Form
  -->
  <?php 
+//  Session start for output query message
     session_start();
     ?>
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- JS and CSS link -->
     <link rel="stylesheet" href="./AddStock.css">
-    <link rel="stylesheet" href="../Nav.css">
-    <title>Add Stock Item</title>
+    <title>Add Stock Item</title> <!-- Page title -->
     <script src="Validate.js"></script>
 </head>
 
 <body>
+    <!-- Header -->
     <header class="">
         <div class="logo">
-            <img src="../../assets/logo.webp" alt="">
+            <img src="../../assets/logo.webp" alt=""> <!-- Logo image link -->
             <p class="logo-text">Optician Portal</p>
         </div>
     </header>
     <div class="container">
+    <!-- side nav -->
     <nav>
-            <ul>
-                <a href="../../index.html">
-                    <li>Home</li>
-                </a>
-                    <a href="../StockMaintenance.html">
-                        <li>Stock Control</li>
-                    </a>
-                    <a href="../DeleteStock/DeleteStock.html.php">
-                        <li>Delete Stock</li>
-                    </a>
-                    <a href="../AddStock/AddStockForm.html.php.">
-                        <li>Add Stock</li>
-                    </a>
-                    <a href="../AmendStock/AmendView.html.php">
-                        <li>Amend/View Stock</li>
-                    </a>
+        <ul>
+            <a href="../../index.html">
+                <li>Home</li>
+            </a>
+            <a href="../StockMaintenance.html">
+                <li>Stock Control</li>
+            </a>
+            <a href="../DeleteStock/DeleteStock.html.php">
+                <li>Delete Stock</li>
+            </a>
+            <a href="../AddStock/AddStockForm.html.php.">
+                <li>Add Stock</li>
+            </a>
+            <a href="../AmendStock/AmendView.html.php">
+                <li>Amend/View Stock</li>
+            </a>
         </ul>
     </nav>
     <div class="content">
+    <!-- Main Content Form -->
     <h2>Add Stock Item Information</h2><br>
-    <form action="AddStock.php" method="post" onsubmit="return  checkSubmit()">
-        <fieldset>
+    <fieldset>
+    <form action="AddStock.php" method="post" onsubmit="return  checkSubmit()"> <!-- Form Calls Validationm Function -->
             <div>
                 <label for="description">Description</label>
                 <input type="text" name="description" id="description" placeholder="Description" autocomplete="off" required>
@@ -72,9 +76,8 @@
                     <?php 
                         //Database connection
                         include "../../db.con.php";
-                
                         $con = mysqli_connect($host, $username, $password, $dbname);
-                
+                        // Error Output
                         if(!$con){
                             echo "Failed to connect to MySQL" . mysqli_connect_error();
                         }
@@ -92,7 +95,7 @@
                     ?>
                 </select>
             </div>
-                <p style="color:red;text-align:center;" id="errorMsg" class="errorMsg"></p>
+                <p style="color:red;text-align:center;" id="errorMsg" class="errorMsg"></p><!-- Error Message  -->
             <div class="button">
                 <input type="submit" value="Add Item">
                 <br>
@@ -100,17 +103,16 @@
             </div> 
         </fieldset>
     </form>
-    
-            <?php
-                // Check if the session variable is set
-                if(isset($_SESSION["stocknumber"])) {
-                    // Display message if session variables are set
-                    echo "<h3 class='myMessage'>Stock Item Added  - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h3>";
-                    
-                    // Destroy the session to remove the message after displaying it
-                    session_destroy();
-                }
-            ?>
+        <?php
+            // Check if the session variable is set
+            if(isset($_SESSION["stocknumber"])) {
+                // Display message if session variables are set
+                echo "<h3 class='myMessage'>Stock Item Added  - ".$_SESSION["stocknumber"].": ".$_SESSION["description"]."</h3>";
+                
+                // Destroy the session to remove the message after displaying it
+                session_destroy();
+            }
+        ?>
     </div>
     </div>
 </body>

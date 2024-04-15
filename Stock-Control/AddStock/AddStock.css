@@ -1,34 +1,41 @@
+/*  
+    Karolis Grigaliunas
+    C00287940
+    Add Stock Form CSS
+*/
+
 /*-- CSS for body and header and sidenav */
+/* CSS for font and background */
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: rgb(255,255,255);
+    background-color: white;
     font-weight: bold;
 }
+/* CSS for top Header */
 header {
     display: flex;
-    justify-content: center;
+    justify-content: center;/* Align Header items to centre */
     align-items: center;
     text-align: center;
-    background-color: #93B5C6;
+    background-color: #93B5C6; /* Light Blue Colour  */
     height: 15%;
     padding-top: 15px;
-    
 }
-
+/* Logog text */
 .logo-p{
     padding-left: 10px;
     display: flex;
     align-items: center;
 }
-
+/* Logo CSS*/
 .logo{
     display: flex;
     align-items: center;
     font-size: 30px;
     font-weight: bold;
-    color: #333;
+    color: #333;/*  background of logo as grey*/
 }
-
+/* Logo image sizing */
 .logo img{
     width: 70px;
     height: 70px;
@@ -37,12 +44,14 @@ header {
     border-radius: 10px;
 
 }
+/* header text sizing */
 .logo-p{
     font-size: 20px;
 }
+/* Side nav CSS font size and shape of bar*/
 nav {
     display: flex;
-    background-color: #e4d8dc;
+    background-color: #e4d8dc; /* Pale Pastel Pink Background */
     font-size: 25px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -50,6 +59,7 @@ nav {
     height: 85vh;
     width: 230px;
 }
+/* Nav List CSS */
 nav ul{
     margin-top: 60px;
     text-decoration: none;
@@ -58,11 +68,12 @@ nav ul{
 nav li{
     margin: 10px 0 40px 0px;
 }
+/* Nav text CSS */
 a {
     text-decoration: none;
-    color: black;
+    color: black;           
 }
-
+/* Text on hover CSS */
 a:hover{
     transition: 0.3s;
     color: white;
@@ -70,34 +81,38 @@ a:hover{
 /* CSS for form  */
 fieldset{
     border-radius: 10px;
-    background-color: #ECE5E5;
-    border: 2px solid black;
-    width: fit-content;
+    background-color: #ECE5E5;  /* Pale Pastel colour for background */
+    border: 2px solid black;    /* Form Border */
+    width: fit-content;            
     font-size: 25px;
 
 }
+/* Align Fieldset items using Flex */
 fieldset div{
     display:flex;
     justify-content: flex-end;
     margin: 1rem;
     align-items: center;
 }
+/* CSS sizing for input and select boxes */
 input, select {
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    /* makes all input type boxes use same style  */
+    -webkit-box-sizing: border-box; 
     border-radius: 5px;
     min-width: 260px;
     min-height: 60;
     text-indent: 3px;
     font-size: 20px;
 }
+/* Form Header CSS */
 h2{
     display: flex;
-    justify-content: center;
+    justify-content: center;    
     margin: 45px;
     font-size: 40px;
 }
+/* Query Confirmation CSS */
 h3{
     display: flex;
     justify-content: center;
@@ -114,33 +129,37 @@ fieldset select{
 label{
     margin-right:0.5rem;
 }
-
+/*Removes the arrows on number input boxes */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;             /*Removes the arrows on number input boxes */
+  -webkit-appearance: none;             
   margin: 0;
 }
+/* Size and align main content box  */
 .content {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 230px); /* adjust the width to take up full screen for centering */
+    width: calc(100% - 230px); /* adjust the width to take up full screen for centering -230 for navbar*/
     align-items: center;
     margin-top: 20px; 
 }
+/* align nav and main content */
 .container {
     display: grid;
     grid-template-columns: 230px 1fr; /* 1x2 grid layout */
 }
+/* Button CSS */
 .button input{
     font-weight: bold;
     min-width: 75px;
     text-align: center;
     border-radius: 28px;
-    color: #000000;
-    background: e4d8dc;
+    color: black; 
+    background: #e4d8dc;    /* Pastel background */
     padding: 5px 15px 5px 15px;
     text-decoration: none
 }
+/* Hover CSS */
 .button input:hover{
     background-color: #d0c0ca;
 }

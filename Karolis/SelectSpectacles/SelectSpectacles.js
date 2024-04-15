@@ -1,9 +1,12 @@
+    // Karolis Grigaliunas
+    // C00287940
+    // SelectSpectacles Javascript
 
 // Validation check
 
 function populate()
 {
-    
+    // populate fields
     var sel = document.getElementById("listbox");
     var result;
     result = sel.options[sel.selectedIndex].value;
@@ -20,13 +23,13 @@ function populate()
 function confirmCheck()
 {
     var response;
-    
+    // check that value has been chosen
     var selectedValue = $('#listbox').val(); // Get the selected value of the dropdown
     if (selectedValue === null) {
         alert("No option chosen");
         return false;
     }
-    response = confirm('Are you sure you want to save these changes?');
+    response = confirm('Are you sure you want to make this order');
     if(response)
     {
         return true;
